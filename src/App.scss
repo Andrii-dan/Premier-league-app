@@ -1,15 +1,6 @@
-* {
-	box-sizing: border-box;
-	margin: 0;
-}
+@import './settings/scss/reset';
 
 body {
-	background: #3d3d3d;
-	color: #fff;
-}
-
-.table {
-	border: 1px solid violet;
-	padding: 5px 20px;
-	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	overflow: hidden;
 }
