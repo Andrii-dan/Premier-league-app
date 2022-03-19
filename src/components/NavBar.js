@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './NavBar.scss';
+import './Navbar.scss';
 
-const NavBar = () => {
+const Navbar = () => {
 	const [hamMenuClass, setHamMenuClass] = useState('hide');
 	const [isToggleOn, setIsToggleOn] = useState(true);
 
@@ -21,7 +21,7 @@ const NavBar = () => {
 
 			<a onClick={handleClick}>
 				{isToggleOn ? (
-					<i className='fa-solid fa-bars'></i>
+					<i className='fas fa-bars'></i>
 				) : (
 					<i className='fas fa-times'></i>
 				)}
@@ -43,4 +43,4 @@ const NavBar = () => {
 	);
 };
 
-export default NavBar;
+export default Navbar;

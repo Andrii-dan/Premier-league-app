@@ -1,9 +1,17 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
 import './App.scss';
-import NavBar from './components/NavBar';
+import Navbar from './components/Navbar';
+import Fixtures from './components/Fixtures/Fixtures';
+import Standing from './components/Standing/Standing';
 
 function App() {
-	return <NavBar />;
+	return (
+		<>
+			<Navbar />
+			<Fixtures />
+			<Standing />
+		</>
+	);
 }
 
 export default App;
