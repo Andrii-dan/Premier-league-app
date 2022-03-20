@@ -48,3 +48,18 @@ h2 {
 	text-align: center;
 	padding: 20px 0;
 }
+
+.buttons {
+	width: 90%;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+	button {
+		background: none;
+		color: #3d3d3d;
+		border: none;
+		margin: 15px;
+		cursor: pointer;
+	}
+}

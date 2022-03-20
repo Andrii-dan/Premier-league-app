@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import './Navbar.scss';
+import './Header.scss';
 
-const Navbar = () => {
+const Header = () => {
 	const [hamMenuClass, setHamMenuClass] = useState('hide');
 	const [isToggleOn, setIsToggleOn] = useState(true);
 
+	
 	const handleClick = () => {
 		setIsToggleOn((prev) => {
 			return prev ? (prev = false) : (prev = true);
@@ -14,7 +15,7 @@ const Navbar = () => {
 		});
 	};
 	return (
-		<section className='nav-bar-section'>
+		<header className='nav-bar-section'>
 			<a href='#' className='logo'>
 				Premier League App
 			</a>
@@ -39,8 +40,8 @@ const Navbar = () => {
 					</li>
 				</ul>
 			</nav>
-		</section>
+		</header>
 	);
 };
 
-export default Navbar;
+export default Header;

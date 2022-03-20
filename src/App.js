@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.scss';
-import Navbar from './components/Navbar';
+import Header from './components/BaseComponents/Header';
+import Content from './components/BaseComponents/Content';
+import Footer from './components/BaseComponents/Footer';
 import Fixtures from './components/Fixtures/Fixtures';
-import Standing from './components/Standing/Standing';
+// import Standing from './components/Standing';
 
 function App() {
 	return (
 		<>
-			<Navbar />
-			<Fixtures />
-			<Standing />
+			<Header />
+			<Content>
+				<Fixtures />
+				{/* <Standing /> */}
+			</Content>
+			<Footer />
 		</>
 	);
 }
