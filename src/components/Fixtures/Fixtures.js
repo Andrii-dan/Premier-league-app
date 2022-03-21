@@ -1,36 +1,14 @@
 import { useState, useEffect } from 'react';
 import './Fixtures.scss';
+import FixturesDate from './FixturesDate';
 
 const Fixtures = () => {
 	const [matchDay, setMatchDay] = useState();
 	const [fixtures, setFixtures] = useState(false);
-	const [fixtureDate, setFixtureDate] = useState([]);
 	const [error, setError] = useState(true);
+	const [fixtureDate, setFixtureDate] = useState([]);
 	const [fixturesByDate, setFixturesByDate] = useState();
 	const todaysDate = new Date().getDate();
-	const days = [
-		'Sunday',
-		'Monday',
-		'Tuesday',
-		'Wednesday',
-		'Thursday',
-		'Friday',
-		'Saturday',
-	];
-	const months = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December',
-	];
 
 	useEffect(() => {
 		fetch(
@@ -96,6 +74,15 @@ const Fixtures = () => {
 			});
 	}, [matchDay]);
 
+	useEffect(() => {
+		const result = fixtureDate.map((el) => {
+			return fixtures.filter((item) => {
+				return item.fixture.date.slice(0, 10) === el;
+			});
+		});
+		setFixturesByDate(result);
+	}, [fixtureDate, fixtures]);
+
 	const handleChangeRound = (e) => {
 		if (matchDay === 38 && e) {
 			return;
@@ -105,17 +92,6 @@ const Fixtures = () => {
 			setMatchDay((prev) => (e ? prev + 1 : prev - 1));
 		}
 	};
-
-	// console.log(fixtureDate);
-
-	useEffect(() => {
-		const result = fixtureDate.map((el) => {
-			return fixtures.filter((item) => {
-				return item.fixture.date.slice(0, 10) === el;
-			});
-		});
-		setFixturesByDate(result);
-	}, [fixtureDate]);
 
 	if (!fixtures) {
 		return <h2>loading...</h2>;
@@ -128,51 +104,12 @@ const Fixtures = () => {
 	} else {
 		return (
 			<>
-				<div className='col-3'></div>
-				<div className='col-6'>
+				<div className='col-6 fixtures'>
 					<h2>Matchday {matchDay}</h2>
-
-					<div className='col-12'>
-						{fixturesByDate.map((el, index) => {
-							return (
-								<>
-									<div key={index} className='col-12 fixture__date'>
-											<h3 className='fixture__date-info'>
-												{days[new Date(fixtureDate[index]).getDay()]}{' '}
-												{new Date(fixtureDate[index]).getDate()}{' '}
-												{months[new Date(fixtureDate[index]).getMonth()]}
-											</h3>
-									</div>
-
-									{el.map((el, index) => {
-										return (
-											<div key={index} className='col-12 fixture'>
-												<span className='team home'>{el.teams.home.name}</span>
-												<span className='club-logo'>
-													<img
-														style={{ width: '25px', height: '25px' }}
-														src={el.teams.home.logo}
-													/>
-												</span>
-												<span className='score'>
-													{el.goals.home === null
-														? el.fixture.date.slice(11, 16)
-														: `${el.goals.home} : ${el.goals.away}`}
-												</span>
-												<span className='club-logo'>
-													<img
-														style={{ width: '25px', height: '25px' }}
-														src={el.teams.away.logo}
-													/>
-												</span>
-												<span className='team away'>{el.teams.away.name}</span>
-											</div>
-										);
-									})}
-								</>
-							);
-						})}
-					</div>
+					<FixturesDate
+						fixturesByDate={fixturesByDate}
+						fixtureDate={fixtureDate}
+					/>
 					<div className='buttons col-12'>
 						<button onClick={() => handleChangeRound(false)}>
 							Previous round

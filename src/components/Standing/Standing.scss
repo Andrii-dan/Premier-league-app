@@ -1,0 +1,87 @@
+.standing {
+	padding: 0 10px;
+	margin-top: 50px;
+
+	&-title {
+		background: #f0f0f0;
+		color: #b9b9b9;
+		border-bottom: 1px solid #b9b9b9;
+	}
+
+	// li:nth-child(5) {
+	// 	border-bottom: 5px solid royalblue;
+	// }
+	// li:nth-child(6) {
+	// 	border-bottom: 5px solid orange;
+	// }
+	// li:nth-child(17) {
+	// 	border-bottom: 5px solid tomato;
+	// }
+}
+
+.club {
+	border: 1px solid #b9b9b9;
+	border-top: none;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0px 0px 14px -2px rgba(182, 182, 182, 1);
+		background: linear-gradient(
+			190deg,
+			rgba(151, 60, 255, 1) 40%,
+			rgba(255, 48, 250, 1)
+		);
+		color: #fff;
+	}
+	&__rank,
+	&__logo,
+	&__name,
+	&__games,
+	&__goals,
+	&__points {
+		display: inline-block;
+	}
+	&__rank,
+	&__games,
+	&__goals,
+	&__points {
+		text-align: center;
+	}
+	&__rank {
+		width: 10%;
+	}
+	&__logo {
+		width: 15%;
+	}
+	&__name {
+		width: 45%;
+	}
+	&__games {
+		width: 10%;
+	}
+	&__goals {
+		width: 10%;
+	}
+	&__points {
+		width: 10%;
+	}
+}
+
+.buttons {
+	// border: 1px solid #b9b9b9;
+	// border-top: none;
+	display: flex;
+	justify-content: space-between;
+	button {
+		background: none;
+		color: #3d3d3d;
+		border: none;
+		margin: 15px;
+		cursor: pointer;
+		transition: 0.3s;
+		&:hover {
+			font-size: 15px;
+		}
+	}
+}

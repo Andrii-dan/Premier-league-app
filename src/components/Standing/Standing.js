@@ -3,20 +3,22 @@ import './Standing.scss';
 
 const Standing = () => {
 	const [standing, setStanding] = useState(false);
+	const [standingTop, setStandingTop] = useState([0, 10]);
+
 	const standingLegend = [
-		'Position',
+		'Rank',
 		'Logo',
 		'Club',
-		'Games Played',
-		'Wins',
-		'Draws',
-		'Loses',
-		'Goals For',
-		'Goals Against',
-		'Goals Diffrence',
-		'Points',
-		'Form',
-		'Position Changing',
+		'GP',
+		// 'Wins',
+		// 'Draws',
+		// 'Loses',
+		// 'GF',
+		// 'GA',
+		'GD',
+		'Pts',
+		// 'Form',
+		// 'Position Changing',
 	];
 
 	useEffect(() => {
@@ -38,49 +40,54 @@ const Standing = () => {
 			});
 	}, []);
 
+	const handleClick = (top, bottom) => {
+		setStandingTop([top, bottom]);
+	};
+
 	if (!standing) {
 		return <h1>Loading...</h1>;
 	} else {
 		return (
-			<>
-				<table>
-					<tbody>
-						<tr>
-							{standingLegend.map((el, index) => {
-								return (
-									<td className='table' key={index}>
-										{el}
-									</td>
-								);
-							})}
-						</tr>
-						{standing.map((el, index) => {
-							return (
-								<tr key={index}>
-									<td className='table'>{el.rank}</td>
-									<td className='table'>
-										<img
-											style={{ width: '50px', height: '50px' }}
-											src={el.team.logo}
-										/>
-									</td>
-									<td className='table'>{el.team.name}</td>
-									<td className='table'>{el.all.played}</td>
-									<td className='table'>{el.all.win}</td>
-									<td className='table'>{el.all.draw}</td>
-									<td className='table'>{el.all.lose}</td>
-									<td className='table'>{el.all.goals.for}</td>
-									<td className='table'>{el.all.goals.against}</td>
-									<td className='table'>{el.goalsDiff}</td>
-									<td className='table'>{el.points}</td>
-									<td className='table'>{el.form}</td>
-									<td className='table'>{el.status}</td>
-								</tr>
-							);
-						})}
-					</tbody>
-				</table>
-			</>
+			<div className='col-3'>
+				<ul className='standing'>
+					<li className='col-12 standing-title'>
+						<span className='club__rank'></span>
+						<span className='club__logo'></span>
+						<span className='club__name'></span>
+						<span className='club__games'>GP</span>
+						<span className='club__goals'>GD</span>
+						<span className='club__points'>Pts</span>
+					</li>
+					{standing.slice(standingTop[0], standingTop[1]).map((el, index) => {
+						return (
+							<li key={index} className='col-12 club'>
+								<span className='club__rank'>{el.rank}</span>
+								<span className='club__logo'>
+									<img
+										style={{ width: '25px', height: '25px' }}
+										src={el.team.logo}
+									/>
+								</span>
+								<span className='club__name'>{el.team.name}</span>
+								<span className='club__games'>{el.all.played}</span>
+								{/* <span className='club__'>{el.all.win}</span> */}
+								{/* <span className='club__'>{el.all.draw}</span> */}
+								{/* <span className='club__'>{el.all.lose}</span> */}
+								{/* <span className='club__'>{el.all.goals.for}</span>
+								<span className='club__'>{el.all.goals.against}</span> */}
+								<span className='club__goals'>{el.goalsDiff}</span>
+								<span className='club__points'>{el.points}</span>
+								{/* <span className='club__'>{el.form}</span> */}
+								{/* <span className='club__'>{el.status}</span> */}
+							</li>
+						);
+					})}
+				</ul>
+				<div className='col-12 buttons'>
+					<button onClick={() => handleClick(0, 10)}>Top</button>
+					<button onClick={() => handleClick(10, 20)}>Bottom</button>
+				</div>
+			</div>
 		);
 	}
 };
