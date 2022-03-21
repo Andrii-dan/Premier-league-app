@@ -8,14 +8,14 @@ import Fixtures from './components/Fixtures/Fixtures';
 
 function App() {
 	return (
-		<>
+		<div>
 			<Header />
 			<Content>
 				<Fixtures />
 				{/* <Standing /> */}
 			</Content>
 			<Footer />
-		</>
+		</div>
 	);
 }
 

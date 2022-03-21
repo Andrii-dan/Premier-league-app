@@ -1,0 +1,31 @@
+$columns: 12;
+$column-base-width: calc(100% / $columns);
+
+@mixin mobile {
+	@media screen and (max-width: 800px) {
+		@content;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1680px;
+	margin: 0 auto;
+	padding: 0;
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		[class^='col-'] {
+			@include mobile {
+				flex-basis: 100%;
+			}
+		}
+		@for $i from 1 through $columns {
+			.col-#{$i} {
+				min-height: 1px;
+				width: $column-base-width * $i;
+				padding: 8px;
+			}
+		}
+	}
+}

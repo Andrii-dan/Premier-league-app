@@ -128,57 +128,59 @@ const Fixtures = () => {
 	} else {
 		return (
 			<>
-				<h2>Matchday {matchDay}</h2>
+				<div className='col-3'></div>
+				<div className='col-6'>
+					<h2>Matchday {matchDay}</h2>
 
-				<table className='fixtures'>
-					<tbody>
+					<div className='col-12'>
 						{fixturesByDate.map((el, index) => {
 							return (
 								<>
-									<tr key={index} className='fixtures-date'>
-										<td colSpan={5}>
-											{days[new Date(fixtureDate[index]).getDay()]}{' '}
-											{new Date(fixtureDate[index]).getDate()}{' '}
-											{months[new Date(fixtureDate[index]).getMonth()]}
-										</td>
-									</tr>
+									<div key={index} className='col-12 fixture__date'>
+											<h3 className='fixture__date-info'>
+												{days[new Date(fixtureDate[index]).getDay()]}{' '}
+												{new Date(fixtureDate[index]).getDate()}{' '}
+												{months[new Date(fixtureDate[index]).getMonth()]}
+											</h3>
+									</div>
 
 									{el.map((el, index) => {
 										return (
-											<tr key={index} className='fixtures-match'>
-												<td>{el.teams.home.name}</td>
-												<td>
+											<div key={index} className='col-12 fixture'>
+												<span className='team home'>{el.teams.home.name}</span>
+												<span className='club-logo'>
 													<img
 														style={{ width: '25px', height: '25px' }}
 														src={el.teams.home.logo}
 													/>
-												</td>
-												<td>
+												</span>
+												<span className='score'>
 													{el.goals.home === null
 														? el.fixture.date.slice(11, 16)
 														: `${el.goals.home} : ${el.goals.away}`}
-												</td>
-												<td>
+												</span>
+												<span className='club-logo'>
 													<img
 														style={{ width: '25px', height: '25px' }}
 														src={el.teams.away.logo}
 													/>
-												</td>
-												<td>{el.teams.away.name}</td>
-											</tr>
+												</span>
+												<span className='team away'>{el.teams.away.name}</span>
+											</div>
 										);
 									})}
 								</>
 							);
 						})}
-					</tbody>
-				</table>
-				<div className='buttons'>
-					<button onClick={() => handleChangeRound(false)}>
-						Previous round
-					</button>
-					<button onClick={() => handleChangeRound(true)}>Next round</button>
+					</div>
+					<div className='buttons col-12'>
+						<button onClick={() => handleChangeRound(false)}>
+							Previous round
+						</button>
+						<button onClick={() => handleChangeRound(true)}>Next round</button>
+					</div>
 				</div>
+				<div className='col-3'></div>
 			</>
 		);
 	}
