@@ -6,10 +6,10 @@
 	font-size: 24px;
 	color: white;
 	background: linear-gradient(
-			190deg,
-			rgba(151, 60, 255, 1) 40%,
-			rgba(255, 48, 250, 1)
-		);
+		190deg,
+		rgba(151, 60, 255, 1) 40%,
+		rgba(255, 48, 250, 1)
+	);
 	padding: 20px;
 	position: relative;
 	margin: 0 auto;
@@ -64,8 +64,10 @@
 	}
 }
 
-// #973CFF
-// #FF30FA
-// #B72CE8
-// #512CE8
-// #3040FF
+h6 {
+	color: #973cff;
+	color: #ff30fa;
+	color: #b72ce8;
+	color: #512ce8;
+	color: #3040ff;
+}

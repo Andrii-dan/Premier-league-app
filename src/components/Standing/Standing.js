@@ -5,21 +5,21 @@ const Standing = () => {
 	const [standing, setStanding] = useState(false);
 	const [standingTop, setStandingTop] = useState([0, 10]);
 
-	const standingLegend = [
-		'Rank',
-		'Logo',
-		'Club',
-		'GP',
-		// 'Wins',
-		// 'Draws',
-		// 'Loses',
-		// 'GF',
-		// 'GA',
-		'GD',
-		'Pts',
-		// 'Form',
-		// 'Position Changing',
-	];
+	// const standingLegend = [
+	// 	'Rank',
+	// 	'Logo',
+	// 	'Club',
+	// 	'GP',
+	// 	// 'Wins',
+	// 	// 'Draws',
+	// 	// 'Loses',
+	// 	// 'GF',
+	// 	// 'GA',
+	// 	'GD',
+	// 	'Pts',
+	// 	// 'Form',
+	// 	// 'Position Changing',
+	// ];
 
 	useEffect(() => {
 		fetch(
@@ -50,7 +50,7 @@ const Standing = () => {
 		return (
 			<div className='col-3'>
 				<ul className='standing'>
-					<li className='col-12 standing-title'>
+					<li className='standing-title'>
 						<span className='club__rank'></span>
 						<span className='club__logo'></span>
 						<span className='club__name'></span>
@@ -66,6 +66,7 @@ const Standing = () => {
 									<img
 										style={{ width: '25px', height: '25px' }}
 										src={el.team.logo}
+										alt={`${el.team.name} logo`}
 									/>
 								</span>
 								<span className='club__name'>{el.team.name}</span>

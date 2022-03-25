@@ -1,22 +1,18 @@
+@import '//src/settings/scss/base';
 .standing {
 	padding: 0 10px;
-	margin-top: 50px;
+	margin-top: 8px;
 
 	&-title {
+		width: 100%;
+		padding: 10px 0;
 		background: #f0f0f0;
 		color: #b9b9b9;
+		background:  #973cff;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
 		border-bottom: 1px solid #b9b9b9;
 	}
-
-	// li:nth-child(5) {
-	// 	border-bottom: 5px solid royalblue;
-	// }
-	// li:nth-child(6) {
-	// 	border-bottom: 5px solid orange;
-	// }
-	// li:nth-child(17) {
-	// 	border-bottom: 5px solid tomato;
-	// }
 }
 
 .club {
@@ -69,8 +65,6 @@
 }
 
 .buttons {
-	// border: 1px solid #b9b9b9;
-	// border-top: none;
 	display: flex;
 	justify-content: space-between;
 	button {

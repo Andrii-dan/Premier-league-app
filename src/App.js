@@ -5,6 +5,7 @@ import Content from './components/BaseComponents/Content';
 import Footer from './components/BaseComponents/Footer';
 import Fixtures from './components/Fixtures/Fixtures';
 import Standing from './components/Standing/Standing';
+import TopScorers from './components/TopPlayers/TopScorers';
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 			<Content>
 				<Standing />
 				<Fixtures />
+				<TopScorers />
 			</Content>
 			<Footer />
 		</div>

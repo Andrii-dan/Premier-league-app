@@ -105,7 +105,9 @@ const Fixtures = () => {
 		return (
 			<>
 				<div className='col-6 fixtures'>
-					<h2>Matchday {matchDay}</h2>
+					<div>
+						<h2 className='fixtures__title'>Matchday {matchDay}</h2>
+					</div>
 					<FixturesDate
 						fixturesByDate={fixturesByDate}
 						fixtureDate={fixtureDate}
@@ -117,7 +119,6 @@ const Fixtures = () => {
 						<button onClick={() => handleChangeRound(true)}>Next round</button>
 					</div>
 				</div>
-				<div className='col-3'></div>
 			</>
 		);
 	}

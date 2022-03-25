@@ -1,0 +1,40 @@
+.player {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #b9b9b9;
+	border-top: none;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0px 0px 14px -2px rgba(182, 182, 182, 1);
+		background: linear-gradient(
+			190deg,
+			rgba(151, 60, 255, 1) 40%,
+			rgba(255, 48, 250, 1)
+		);
+		color: #fff;
+	}
+	&__photo {
+		width: 15%;
+		img {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+		}
+	}
+	&__info {
+		width: 75%;
+		h3 {
+			font-weight: 600;
+			font-size: 16px;
+		}
+		h4 {
+			font-weight: 400;
+			font-size: 14px;
+		}
+	}
+	&__goals {
+		width: 10%;
+		text-align: center;
+	}
+}

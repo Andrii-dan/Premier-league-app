@@ -28,7 +28,7 @@ const FixturesDate = ({ fixturesByDate, fixtureDate }) => {
 	];
 
 	return (
-		<div className='col-12'>
+		<div className='fixture__date-container'>
 			{fixturesByDate.map((el, index) => {
 				return (
 					<>

@@ -1,4 +1,11 @@
+.fixture__date-container {
+	width: 100%;
+	border-bottom: 1px solid #b9b9b9;
+}
+
 .fixture__date {
+	border: 1px solid #b9b9b9;
+	border-top: none;
 	&-info {
 		text-align: center;
 		padding: 10px 0;
