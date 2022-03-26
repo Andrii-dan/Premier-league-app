@@ -1,3 +1,4 @@
+@import '../../settings/scss/base';
 .nav-bar-section {
 	height: 60px;
 	display: flex;
@@ -5,11 +6,7 @@
 	align-items: center;
 	font-size: 24px;
 	color: white;
-	background: linear-gradient(
-		190deg,
-		rgba(151, 60, 255, 1) 40%,
-		rgba(255, 48, 250, 1)
-	);
+	background: $footer-header-color;
 	padding: 20px;
 	position: relative;
 	margin: 0 auto;

@@ -112,7 +112,7 @@ const Fixtures = () => {
 						fixturesByDate={fixturesByDate}
 						fixtureDate={fixtureDate}
 					/>
-					<div className='buttons col-12'>
+					<div className='fixtures__buttons col-12'>
 						<button onClick={() => handleChangeRound(false)}>
 							Previous round
 						</button>

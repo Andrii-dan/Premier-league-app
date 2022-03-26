@@ -24,7 +24,7 @@ const Scorers = () => {
 	if (!scorers) {
 		return 'Loading...';
 	} else {
-		return scorers.slice(0, 5).map((el, index) => {
+		return scorers.slice(0, 3).map((el, index) => {
 			return (
 				<Player
 					key={index}

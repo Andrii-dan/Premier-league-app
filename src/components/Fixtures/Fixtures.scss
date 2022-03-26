@@ -1,4 +1,4 @@
-@import '//src/settings/scss/base';
+@import '../../settings/scss/base';
 .fixtures {
 	margin-top: 8px;
 	&__title {
@@ -6,29 +6,29 @@
 		text-align: center;
 		padding: 10px 0;
 		font-size: 16px;
-		box-shadow: 0px 0px 14px -2px rgba(182, 182, 182, 1);
-		background: #973cff;
+		background: $title-background-color;
 		color: #fff;
 		border-top-left-radius: 2px;
 		border-top-right-radius: 2px;
 		border-bottom: 1px solid #b9b9b9;
 	}
-}
 
-.buttons {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 50px;
-
-	button {
-		background: none;
-		color: #3d3d3d;
-		border: none;
-		margin: 15px;
-		cursor: pointer;
-		transition: 0.3s;
-		&:hover {
-			font-size: 15px;
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 50px;
+		background: $table-bg-color;
+		button {
+			background: none;
+			color: #3d3d3d;
+			border: none;
+			margin: 15px;
+			cursor: pointer;
+			transition: 0.3s;
+			line-height: 15px;
+			&:hover {
+				transform: scale(1.1);
+			}
 		}
 	}
 }

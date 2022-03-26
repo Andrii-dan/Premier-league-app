@@ -7,21 +7,21 @@ import ScorersPlusAssists from './ScorersPlusAssists';
 const TopScorers = () => {
 	return (
 		<div className='col-3'>
-			<ul className='col-12'>
+			<ul className='col-12 topscorers__container'>
 				<li>
 					<h2 className='scorers__title'>Scorers</h2>
 				</li>
 				<Scorers />
 			</ul>
 
-			<ul className='col-12'>
+			<ul className='col-12 topscorers__container'>
 				<li>
 					<h2 className='scorers__title'>Assists</h2>
 				</li>
 				<Assists />
 			</ul>
 
-			<ul className='col-12'>
+			<ul className='col-12 topscorers__container'>
 				<li>
 					<h2 className='scorers__title'>Goals & Assists</h2>
 				</li>

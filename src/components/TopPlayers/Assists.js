@@ -24,7 +24,7 @@ const Assists = () => {
 	if (!assists) {
 		return 'Loading...';
 	} else {
-		return assists.slice(0, 5).map((el, index) => {
+		return assists.slice(0, 3).map((el, index) => {
 			return (
 				<Player
 					key={index}

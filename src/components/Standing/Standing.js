@@ -83,11 +83,12 @@ const Standing = () => {
 							</li>
 						);
 					})}
+
+					<li className='col-12 standing__buttons'>
+						<button onClick={() => handleClick(0, 10)}>Top</button>
+						<button onClick={() => handleClick(10, 20)}>Bottom</button>
+					</li>
 				</ul>
-				<div className='col-12 buttons'>
-					<button onClick={() => handleClick(0, 10)}>Top</button>
-					<button onClick={() => handleClick(10, 20)}>Bottom</button>
-				</div>
 			</div>
 		);
 	}

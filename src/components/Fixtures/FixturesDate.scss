@@ -1,6 +1,8 @@
+@import '../../settings/scss/base';
 .fixture__date-container {
 	width: 100%;
 	border-bottom: 1px solid #b9b9b9;
+	background: $table-bg-color;
 }
 
 .fixture__date {
@@ -9,5 +11,6 @@
 	&-info {
 		text-align: center;
 		padding: 10px 0;
+		font-weight: 600;
 	}
 }
