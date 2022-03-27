@@ -103,8 +103,8 @@ const Fixtures = () => {
 		);
 	} else {
 		return (
-			<>
-				<div className='col-6 fixtures'>
+			<div className='col-6 fixtures'>
+				<div className='col-12'>
 					<div>
 						<h2 className='fixtures__title'>Matchday {matchDay}</h2>
 					</div>
@@ -114,12 +114,14 @@ const Fixtures = () => {
 					/>
 					<div className='fixtures__buttons col-12'>
 						<button onClick={() => handleChangeRound(false)}>
-							Previous round
+							<i class='fas fa-arrow-left'></i> Previous round
 						</button>
-						<button onClick={() => handleChangeRound(true)}>Next round</button>
+						<button onClick={() => handleChangeRound(true)}>
+							Next round <i className='fas fa-arrow-right'></i>
+						</button>
 					</div>
 				</div>
-			</>
+			</div>
 		);
 	}
 };

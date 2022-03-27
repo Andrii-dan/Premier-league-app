@@ -9,7 +9,7 @@ import TopScorers from './components/TopPlayers/TopScorers';
 
 function App() {
 	return (
-		<div>
+		<div className='main__container'>
 			<Header />
 			<Content>
 				<Standing />

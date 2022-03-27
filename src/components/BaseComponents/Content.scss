@@ -1,5 +1,6 @@
 @import '../../settings/scss/grid';
+@import '../../settings/scss/base';
 
 .content__container {
-	background: #3f3f3f;
+	background: $main-background-color;
 }

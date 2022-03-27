@@ -48,7 +48,7 @@ const Standing = () => {
 		return <h1>Loading...</h1>;
 	} else {
 		return (
-			<div className='col-3'>
+			<div className='col-3 standing__container'>
 				<ul className='standing'>
 					<li className='standing-title'>
 						<span className='club__rank'></span>
@@ -60,7 +60,16 @@ const Standing = () => {
 					</li>
 					{standing.slice(standingTop[0], standingTop[1]).map((el, index) => {
 						return (
-							<li key={index} className='col-12 club'>
+							<li
+								key={index}
+								className={
+									el.rank === 4
+										? 'col-12 club ucl-zone'
+										: el.rank === 17
+										? 'col-12 club relegation-zone'
+										: 'col-12 club'
+								}
+							>
 								<span className='club__rank'>{el.rank}</span>
 								<span className='club__logo'>
 									<img
@@ -85,8 +94,12 @@ const Standing = () => {
 					})}
 
 					<li className='col-12 standing__buttons'>
-						<button onClick={() => handleClick(0, 10)}>Top</button>
-						<button onClick={() => handleClick(10, 20)}>Bottom</button>
+						<button onClick={() => handleClick(0, 10)}>
+							<i class='fas fa-arrow-left'></i> Top{' '}
+						</button>
+						<button onClick={() => handleClick(10, 20)}>
+							Bottom <i class='fas fa-arrow-right'></i>
+						</button>
 					</li>
 				</ul>
 			</div>

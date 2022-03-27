@@ -1,9 +1,8 @@
 @import './grid';
-$title-background-color: #6656e8;
 $base-box-shadow: 0px 0px 14px -2px #1d1d1d;
 $table-bg-color: #f9f9f9;
-$footer-header-color: linear-gradient(
-	190deg,
-	rgba(151, 60, 255, 1) 40%,
-	rgba(255, 48, 250, 1)
-);
+$footer-header-color: linear-gradient(0deg, rgba(151, 60, 255, 1) 100%, rgba(172, 121, 222, 1) 0%);
+$main-background-color: #3f3f3f;
+$title-background-color: $footer-header-color;//#6656e8;
+$buttons-hover-color: #973cff;
+$border-radius: 3px;

@@ -6,12 +6,19 @@
 	width: 100%;
 	padding: 10px;
 	padding-bottom: 0;
+	@include mobile {
+		overflow: auto;
+	}
 	span {
 		width: 10%;
+		padding: 0 4px;
 		display: inline-block;
 		text-align: center;
         cursor: pointer;
 		transition: 0.3s;
+		@include mobile {
+			box-sizing: content-box;
+		}
 		&:hover {
 			transform: scale(1.4);
 		}

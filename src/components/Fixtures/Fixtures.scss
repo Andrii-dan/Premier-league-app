@@ -1,6 +1,8 @@
 @import '../../settings/scss/base';
 .fixtures {
-	margin-top: 8px;
+	@include mobile {
+		order: 0;
+	}
 	&__title {
 		width: 100%;
 		text-align: center;
@@ -8,16 +10,17 @@
 		font-size: 16px;
 		background: $title-background-color;
 		color: #fff;
-		border-top-left-radius: 2px;
-		border-top-right-radius: 2px;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
 		border-bottom: 1px solid #b9b9b9;
 	}
 
 	&__buttons {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 50px;
 		background: $table-bg-color;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
 		button {
 			background: none;
 			color: #3d3d3d;
@@ -28,6 +31,10 @@
 			line-height: 15px;
 			&:hover {
 				transform: scale(1.1);
+			}
+			.fa-arrow-right,
+			.fa-arrow-left {
+				font-size: 11px;
 			}
 		}
 	}
