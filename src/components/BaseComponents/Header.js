@@ -5,7 +5,6 @@ const Header = () => {
 	const [hamMenuClass, setHamMenuClass] = useState('hide');
 	const [isToggleOn, setIsToggleOn] = useState(true);
 
-	
 	const handleClick = () => {
 		setIsToggleOn((prev) => {
 			return prev ? (prev = false) : (prev = true);
@@ -17,7 +16,15 @@ const Header = () => {
 	return (
 		<header className='nav-bar-section'>
 			<a href='#' className='logo'>
-				Premier League App
+				{' '}
+				Premier{' '}
+				<img
+					src='logo.png'
+					alt='logo'
+					style={{ width: '35px', height: '35px' }}
+				/>{' '}
+				League
+				{/* App */}
 			</a>
 
 			<a onClick={handleClick}>

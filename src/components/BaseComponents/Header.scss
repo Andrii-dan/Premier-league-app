@@ -12,10 +12,13 @@
 	margin: 0 auto;
 	max-width: 1680px;
 	.logo {
-		font-style: italic;
+		font-family: 'Open Sans';
 		font-weight: bold;
 		color: white;
 		width: 80%;
+		display: flex;
+		align-items: center;
+		// text-transform: uppercase;
 	}
 
 	.fa-bars,
