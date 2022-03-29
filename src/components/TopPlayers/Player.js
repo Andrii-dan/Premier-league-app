@@ -1,14 +1,11 @@
 import React from 'react';
 import './Player.scss';
 
-const Player = ({ playerPhoto, playerName, club, goals }) => {
+const Player = ({ playerPhoto, playerName, club, goals, additionalClass }) => {
 	return (
-		<li className='col-12 player'>
+		<li className={`col-12 player  ${additionalClass}`}>
 			<div className='player__photo'>
-				<img
-					src={playerPhoto}
-					alt={`${playerName}'s photo`}
-				/>
+				<img src={playerPhoto} alt={`${playerName}'s photo`} />
 			</div>
 			<div className='player__info'>
 				<h3>{playerName}</h3>

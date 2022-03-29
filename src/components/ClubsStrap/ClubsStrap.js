@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ClubsStrap.scss';
 
 const ClubsStrap = () => {
 	const [clubsList, setClubsList] = useState(false);
+	let navigate = useNavigate();
 
 	useEffect(() => {
 		fetch(
@@ -36,7 +38,12 @@ const ClubsStrap = () => {
 			<div className='clubs__strap'>
 				{clubsList.map((el, index) => {
 					return (
-						<span key={index}>
+						<span
+							key={index}
+							onClick={() => {
+								navigate(`/clubs/${el.team.id}`);
+							}}
+						>
 							<img
 								className='club__logo'
 								src={el.team.logo}
