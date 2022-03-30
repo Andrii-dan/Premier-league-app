@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Standing.scss';
 
-const Standing = () => {
+const ClubStanding = ({ clubId }) => {
 	const [standing, setStanding] = useState(false);
-	const [standingTop, setStandingTop] = useState([0, 10]);
 
 	useEffect(() => {
 		fetch(
@@ -24,15 +23,11 @@ const Standing = () => {
 			});
 	}, []);
 
-	const handleClick = (top, bottom) => {
-		setStandingTop([top, bottom]);
-	};
-
 	if (!standing) {
 		return <h1>Loading...</h1>;
 	} else {
 		return (
-			<div className='col-3 standing__container'>
+			<div className='col-12'>
 				<ul className='standing'>
 					<li className='standing-title'>
 						<span className='club__rank'></span>
@@ -42,16 +37,22 @@ const Standing = () => {
 						<span className='club__goals'>GD</span>
 						<span className='club__points'>Pts</span>
 					</li>
-					{standing.slice(standingTop[0], standingTop[1]).map((el, index) => {
+					{standing.map((el, index) => {
 						return (
 							<li
 								key={index}
 								className={
-									el.rank === 4
-										? 'col-12 club ucl-zone'
+									el.rank === 4 && el.team.id == clubId
+										? 'col-12 club-zone ucl-zone mark'
+										: el.rank === 17 && el.team.id == clubId
+										? 'col-12 club-zone relegation-zone mark'
+										: el.rank === 4
+										? 'col-12 club-zone ucl-zone'
 										: el.rank === 17
-										? 'col-12 club relegation-zone'
-										: 'col-12 club'
+										? 'col-12 club-zone relegation-zone'
+										: el.team.id == clubId
+										? 'col-12 club-zone mark'
+										: 'col-12 club-zone'
 								}
 							>
 								<span className='club__rank'>{el.rank}</span>
@@ -76,19 +77,10 @@ const Standing = () => {
 							</li>
 						);
 					})}
-
-					<li className='col-12 standing__buttons'>
-						<button onClick={() => handleClick(0, 10)}>
-							<i class='fas fa-arrow-left'></i> Top{' '}
-						</button>
-						<button onClick={() => handleClick(10, 20)}>
-							Bottom <i class='fas fa-arrow-right'></i>
-						</button>
-					</li>
 				</ul>
 			</div>
 		);
 	}
 };
 
-export default Standing;
+export default ClubStanding;

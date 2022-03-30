@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Club.scss';
 import ClubSquad from './ClubSquad';
+import ClubStat from './ClubStat/ClubStat';
 import LastFixtures from './LastFixtures';
 import NextFixture from './NextFixture';
+import ClubStanding from '../Standing/ClubStanding';
+import WinPercentege from './WinPercentege';
 
 const Club = ({ clubId }) => {
 	const todaysDate = new Date().toISOString().slice(0, 10);
@@ -29,8 +32,6 @@ const Club = ({ clubId }) => {
 			});
 	}, [clubId]);
 
-	console.log(clubInfo);
-
 	if (!clubInfo) {
 		return <h2>loading...</h2>;
 	} else {
@@ -48,6 +49,11 @@ const Club = ({ clubId }) => {
 				<div className='col-6'>
 					<NextFixture clubId={clubId} />
 					<LastFixtures clubId={clubId} />
+					<ClubStat clubInfo={clubInfo} />
+				</div>
+				<div className='col-3'>
+					<WinPercentege clubMatches={clubInfo.fixtures} />
+					<ClubStanding clubId={clubId} />
 				</div>
 			</>
 		);

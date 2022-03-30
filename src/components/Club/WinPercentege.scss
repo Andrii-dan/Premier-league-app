@@ -1,0 +1,45 @@
+@import '../../settings/scss/base';
+
+.win-percentege__title {
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 16px;
+	background: $title-background-color;
+	color: #fff;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	border-bottom: 1px solid #b9b9b9;
+}
+
+.win-percentege__box {
+	background: #f9f9f9;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	font-weight: 800;
+}
+
+.high,
+.normal,
+.low,
+.very-low {
+	padding: 40px;
+	margin-bottom: 8px;
+}
+
+.high {
+	color: #31C700;
+}
+.normal {
+	color: #7AC70E;
+}
+.low {
+	color: #de901d;
+}
+.very-low {
+	color: #de3107;
+}

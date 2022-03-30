@@ -1,15 +1,15 @@
 @import '../../settings/scss/base';
-.standing__container{
+.standing__container {
 	@include mobile {
 		order: 1;
 	}
 }
 
 .standing {
-	padding: 0 8px;
 	margin-top: 8px;
 	@include mobile {
 		order: 1;
+		padding: 0 8px;
 	}
 	&-title {
 		width: 100%;
@@ -62,7 +62,6 @@
 		color: #fff;
 	}
 
-
 	&__rank,
 	&__logo,
 	&__name,
@@ -95,6 +94,28 @@
 	&__points {
 		width: 10%;
 	}
+}
+
+.club-zone {
+	border: 1px solid #b9b9b9;
+	border-top: none;
+	display: flex;
+	align-items: center;
+	background: $table-bg-color;
+	cursor: pointer;
+	&:last-child {
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+	}
+}
+
+.mark {
+	background: linear-gradient(
+		190deg,
+		rgba(151, 60, 255, 1) 40%,
+		rgba(255, 48, 250, 1)
+	);
+	color: #fff;
 }
 
 .ucl-zone {

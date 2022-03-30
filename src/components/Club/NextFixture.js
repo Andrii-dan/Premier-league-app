@@ -49,8 +49,6 @@ const NextFixture = ({ clubId }) => {
 			});
 	}, [clubId]);
 
-	console.log(fixture);
-
 	if (!fixture) {
 		return <h2>loading...</h2>;
 	} else {
