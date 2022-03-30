@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import './Club.scss';
 import ClubSquad from './ClubSquad';
+import LastFixtures from './LastFixtures';
+import NextFixture from './NextFixture';
 
 const Club = ({ clubId }) => {
 	const todaysDate = new Date().toISOString().slice(0, 10);
@@ -33,10 +36,19 @@ const Club = ({ clubId }) => {
 	} else {
 		return (
 			<>
-				<h1 className='col-12' style={{ color: 'white', textAlign: 'center' }}>
-					{clubInfo.team.name}
-				</h1>
+				<div className='col-12 club__page'>
+					<img
+						className='club__page-logo'
+						src={clubInfo.team.logo}
+						alt={`${clubInfo.team.name} logo`}
+					/>{' '}
+					<h1 className='club__page-title'>{clubInfo.team.name}</h1>
+				</div>
 				<ClubSquad clubId={clubId} />
+				<div className='col-6'>
+					<NextFixture clubId={clubId} />
+					<LastFixtures clubId={clubId} />
+				</div>
 			</>
 		);
 	}

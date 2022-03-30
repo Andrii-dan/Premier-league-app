@@ -1,0 +1,30 @@
+@import '../../settings/scss/base';
+
+.next-fixtures__title {
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 16px;
+	background: $title-background-color;
+	color: #fff;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	border-bottom: 1px solid #b9b9b9;
+}
+
+.next-fixtures__date {
+	border: 1px solid $table-bg-color;
+	border-top: none;
+	background: $table-bg-color;
+	border-bottom: 1px solid #b9b9b9;
+	.next-fixtures__date-info {
+		text-align: center;
+		padding: 10px 0;
+		font-weight: 600;
+	}
+}
+
+.last-fixture:last-child {
+	border-bottom-left-radius: $border-radius;
+	border-bottom-right-radius: $border-radius;
+}

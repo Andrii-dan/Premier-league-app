@@ -1,0 +1,57 @@
+@import '../../settings/scss/base';
+
+.last-fixtures__title {
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 16px;
+	background: $title-background-color;
+	color: #fff;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	border-bottom: 1px solid #b9b9b9;
+}
+
+.last-fixtures__container {
+	border-bottom-left-radius: $border-radius;
+	border-bottom-right-radius: $border-radius;
+	background: $table-bg-color;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+    @include mobile {
+        flex-wrap: wrap;
+    }
+}
+
+.last-fixtures__info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+	padding: 10px;
+	.last-fixtures__date,
+	.last-fixtures__logo,
+	.last-fixtures__score,
+	.last-fixtures__status {
+		padding: 10px;
+	}
+	.last-fixtures__logo {
+		width: 40px;
+		height: 40px;
+		box-sizing: content-box;
+	}
+	.last-fixtures__status {
+		font-size: 9px;
+	}
+    .fa-circle {
+        color: #b9b9b9;
+    }
+	.win {
+		color: #6beb7e;
+	}
+	.lose {
+		color: tomato;
+	}
+}
