@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
 	const [hamMenuClass, setHamMenuClass] = useState('hide');
 	const [isToggleOn, setIsToggleOn] = useState(true);
-
+	let navigate = useNavigate();
+	
 	const handleClick = () => {
 		setIsToggleOn((prev) => {
 			return prev ? (prev = false) : (prev = true);
@@ -15,7 +17,12 @@ const Header = () => {
 	};
 	return (
 		<header className='nav-bar-section'>
-			<a href='#' className='logo'>
+			<span
+				onClick={() => {
+					navigate('/');
+				}}
+				className='logo'
+			>
 				{' '}
 				Premier{' '}
 				<img
@@ -25,7 +32,7 @@ const Header = () => {
 				/>{' '}
 				League
 				{/* App */}
-			</a>
+			</span>
 
 			<a onClick={handleClick}>
 				{isToggleOn ? (

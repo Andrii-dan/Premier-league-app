@@ -1,6 +1,6 @@
 @import '../../settings/scss/base';
 
-.win-percentege__title {
+.win-percentage__title {
 	width: 100%;
 	text-align: center;
 	padding: 10px 0;
@@ -12,30 +12,41 @@
 	border-bottom: 1px solid #b9b9b9;
 }
 
-.win-percentege__box {
+.win-percentage__box {
 	background: #f9f9f9;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 50px;
+	font-size: 25px;
 	font-weight: 800;
+	flex-wrap: wrap;
+}
+
+.percentage-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&-title {
+		font-size: 20px;
+		padding: 20px 30px 10px 30px;
+	}
 }
 
 .high,
 .normal,
 .low,
 .very-low {
-	padding: 40px;
-	margin-bottom: 8px;
+	padding: 5px 30px 20px 30px;
 }
 
 .high {
-	color: #31C700;
+	color: #31c700;
 }
 .normal {
-	color: #7AC70E;
+	color: #7ac70e;
 }
 .low {
 	color: #de901d;
