@@ -9,6 +9,10 @@ const Fixtures = () => {
 	const [fixtureDate, setFixtureDate] = useState([]);
 	const [fixturesByDate, setFixturesByDate] = useState();
 	const todaysDate = new Date().getDate();
+	const selectOption = [
+		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+		22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
+	];
 
 	useEffect(() => {
 		fetch(
@@ -93,6 +97,10 @@ const Fixtures = () => {
 		}
 	};
 
+	const onSelectChange = (e) => {
+		setMatchDay(parseInt(e.target.value));
+	};
+
 	if (!fixtures) {
 		return <h2>loading...</h2>;
 	} else if (!error) {
@@ -105,9 +113,18 @@ const Fixtures = () => {
 		return (
 			<div className='col-6 fixtures'>
 				<div className='col-12'>
-					<div>
-						<h2 className='fixtures__title'>Matchday {matchDay}</h2>
-					</div>
+					<form>
+						<h2 className='fixtures__title'>
+							<select value={`Matchday ${matchDay}`} onChange={onSelectChange}>
+								<option value={`Matchday ${matchDay}`}>
+									{`Matchday ${matchDay}`} 
+								</option>
+								{selectOption.map((el) => {
+									return <option value={el}>Matchday {el}</option>;
+								})}
+							</select>
+						</h2>
+					</form>
 					<FixturesDate
 						fixturesByDate={fixturesByDate}
 						fixtureDate={fixtureDate}
