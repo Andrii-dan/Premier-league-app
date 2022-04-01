@@ -30,94 +30,92 @@ const ClubSquad = ({ clubId }) => {
 		return <h2>loading...</h2>;
 	} else {
 		return (
-			<>
-				<div className='col-3 club-squad__container'>
-					<ul className='col-12'>
-						<li>
-							<h2 className='club-squad__title'>Goalkeeper</h2>
-						</li>
-						{squad.players
-							.filter((item) => {
-								return item.position === 'Goalkeeper';
-							})
-							.map((el, index) => {
-								return (
-									<Player
-										key={index}
-										playerPhoto={el.photo}
-										playerName={el.name}
-										club={''}
-										goals={el.number}
-										additionalClass={'last-player'}
-									/>
-								);
-							})}
-					</ul>
-					<ul className='col-12'>
-						<li>
-							<h2 className='club-squad__title'>Defence</h2>
-						</li>
-						{squad.players
-							.filter((item) => {
-								return item.position === 'Defender';
-							})
-							.map((el, index) => {
-								return (
-									<Player
-										key={index}
-										playerPhoto={el.photo}
-										playerName={el.name}
-										club={''}
-										goals={el.number}
-										additionalClass={'last-player'}
-									/>
-								);
-							})}
-					</ul>
-					<ul className='col-12'>
-						<li>
-							<h2 className='club-squad__title'>Midfield</h2>
-						</li>
-						{squad.players
-							.filter((item) => {
-								return item.position === 'Midfielder';
-							})
-							.map((el, index) => {
-								return (
-									<Player
-										key={index}
-										playerPhoto={el.photo}
-										playerName={el.name}
-										club={''}
-										goals={el.number}
-										additionalClass={'last-player'}
-									/>
-								);
-							})}
-					</ul>
-					<ul className='col-12'>
-						<li>
-							<h2 className='club-squad__title'>Attack</h2>
-						</li>
-						{squad.players
-							.filter((item) => {
-								return item.position === 'Attacker';
-							})
-							.map((el, index) => {
-								return (
-									<Player
-										key={index}
-										playerPhoto={el.photo}
-										playerName={el.name}
-										club={''}
-										goals={el.number}
-										additionalClass={'last-player'}
-									/>
-								);
-							})}
-					</ul>
-				</div>
-			</>
+			<div className='col-3 club-squad__container'>
+				<ul className='col-12'>
+					<li>
+						<h2 className='club-squad__title'>Goalkeeper</h2>
+					</li>
+					{squad.players
+						.filter((item) => {
+							return item.position === 'Goalkeeper';
+						})
+						.map((el, index) => {
+							return (
+								<Player
+									key={index}
+									playerPhoto={el.photo}
+									playerName={el.name}
+									club={''}
+									goals={el.number}
+									additionalClass={'last-player'}
+								/>
+							);
+						})}
+				</ul>
+				<ul className='col-12'>
+					<li>
+						<h2 className='club-squad__title'>Defence</h2>
+					</li>
+					{squad.players
+						.filter((item) => {
+							return item.position === 'Defender';
+						})
+						.map((el, index) => {
+							return (
+								<Player
+									key={index}
+									playerPhoto={el.photo}
+									playerName={el.name}
+									club={''}
+									goals={el.number}
+									additionalClass={'last-player'}
+								/>
+							);
+						})}
+				</ul>
+				<ul className='col-12'>
+					<li>
+						<h2 className='club-squad__title'>Midfield</h2>
+					</li>
+					{squad.players
+						.filter((item) => {
+							return item.position === 'Midfielder';
+						})
+						.map((el, index) => {
+							return (
+								<Player
+									key={index}
+									playerPhoto={el.photo}
+									playerName={el.name}
+									club={''}
+									goals={el.number}
+									additionalClass={'last-player'}
+								/>
+							);
+						})}
+				</ul>
+				<ul className='col-12'>
+					<li>
+						<h2 className='club-squad__title'>Attack</h2>
+					</li>
+					{squad.players
+						.filter((item) => {
+							return item.position === 'Attacker';
+						})
+						.map((el, index) => {
+							return (
+								<Player
+									key={index}
+									playerPhoto={el.photo}
+									playerName={el.name}
+									club={''}
+									goals={el.number}
+									additionalClass={'last-player'}
+								/>
+							);
+						})}
+				</ul>
+			</div>
 		);
 	}
 };

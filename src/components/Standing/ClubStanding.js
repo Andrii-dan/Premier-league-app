@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Standing.scss';
 
 const ClubStanding = ({ clubId }) => {
 	const [standing, setStanding] = useState(false);
+	let navigate = useNavigate();
 
 	useEffect(() => {
 		fetch(
@@ -27,8 +29,8 @@ const ClubStanding = ({ clubId }) => {
 		return <h1>Loading...</h1>;
 	} else {
 		return (
-			<div className='col-12'>
-				<ul className='standing'>
+
+				<ul className='col-12 standing'>
 					<li className='standing-title'>
 						<span className='club__rank'></span>
 						<span className='club__logo'></span>
@@ -42,18 +44,21 @@ const ClubStanding = ({ clubId }) => {
 							<li
 								key={index}
 								className={
-									el.rank === 4 && el.team.id == clubId
+									el.rank === 4 && el.team.id === parseInt(clubId)
 										? 'col-12 club-zone ucl-zone mark'
-										: el.rank === 17 && el.team.id == clubId
+										: el.rank === 17 && el.team.id === parseInt(clubId)
 										? 'col-12 club-zone relegation-zone mark'
 										: el.rank === 4
 										? 'col-12 club-zone ucl-zone'
 										: el.rank === 17
 										? 'col-12 club-zone relegation-zone'
-										: el.team.id == clubId
+										: el.team.id === parseInt(clubId)
 										? 'col-12 club-zone mark'
 										: 'col-12 club-zone'
 								}
+								onClick={() => {
+									navigate(`/clubs/${el.team.id}`);
+								}}
 							>
 								<span className='club__rank'>{el.rank}</span>
 								<span className='club__logo'>
@@ -78,7 +83,7 @@ const ClubStanding = ({ clubId }) => {
 						);
 					})}
 				</ul>
-			</div>
+
 		);
 	}
 };

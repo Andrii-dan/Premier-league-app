@@ -117,10 +117,14 @@ const Fixtures = () => {
 						<h2 className='fixtures__title'>
 							<select value={`Matchday ${matchDay}`} onChange={onSelectChange}>
 								<option value={`Matchday ${matchDay}`}>
-									{`Matchday ${matchDay}`} 
+									{`Matchday ${matchDay}`}
 								</option>
-								{selectOption.map((el) => {
-									return <option value={el}>Matchday {el}</option>;
+								{selectOption.map((el, index) => {
+									return (
+										<option key={index} value={el}>
+											Matchday {el}
+										</option>
+									);
 								})}
 							</select>
 						</h2>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Standing.scss';
 
 const Standing = () => {
 	const [standing, setStanding] = useState(false);
 	const [standingTop, setStandingTop] = useState([0, 10]);
+	let navigate = useNavigate();
 
 	useEffect(() => {
 		fetch(
@@ -53,6 +55,9 @@ const Standing = () => {
 										? 'col-12 club relegation-zone'
 										: 'col-12 club'
 								}
+								onClick={() => {
+									navigate(`/clubs/${el.team.id}`);
+								}}
 							>
 								<span className='club__rank'>{el.rank}</span>
 								<span className='club__logo'>
@@ -80,6 +85,13 @@ const Standing = () => {
 					<li className='col-12 standing__buttons'>
 						<button onClick={() => handleClick(0, 10)}>
 							<i class='fas fa-arrow-left'></i> Top{' '}
+						</button>
+						<button
+							onClick={() => {
+								navigate('/standing');
+							}}
+						>
+							See Full
 						</button>
 						<button onClick={() => handleClick(10, 20)}>
 							Bottom <i class='fas fa-arrow-right'></i>

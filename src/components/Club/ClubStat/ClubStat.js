@@ -6,7 +6,7 @@ const ClubStat = ({ clubInfo }) => {
 	return (
 		<>
 			{' '}
-			<div className='col-12'>
+			<div className='col-12 club-stat'>
 				<div>
 					<h2 className='stat__title'>Fixtures</h2>
 				</div>
@@ -30,7 +30,7 @@ const ClubStat = ({ clubInfo }) => {
 					thirdStat={clubInfo.fixtures.loses.total}
 				/>
 			</div>
-			<div className='col-12'>
+			<div className='col-12 club-stat'>
 				<div>
 					<h2 className='stat__title'>Goals</h2>
 				</div>

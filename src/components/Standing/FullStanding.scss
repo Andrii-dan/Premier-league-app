@@ -1,0 +1,102 @@
+@import '../../settings/scss/base';
+
+.full-standing {
+	margin-top: 8px;
+	&-title {
+		width: 100%;
+		padding: 10px 0;
+		color: #fff;
+		background: $title-background-color;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		border-bottom: 1px solid #b9b9b9;
+	}
+
+	.club {
+		border: 1px solid #b9b9b9;
+		border-top: none;
+		display: flex;
+		align-items: center;
+		background: $table-bg-color;
+		cursor: pointer;
+		&:hover {
+			box-shadow: $base-box-shadow;
+			background: linear-gradient(
+				190deg,
+				rgba(151, 60, 255, 1) 40%,
+				rgba(255, 48, 250, 1)
+			);
+			color: #fff;
+		}
+		&:last-child {
+			border-bottom-left-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
+		}
+	}
+
+	.club__rank,
+	.club__logo,
+	.club__name,
+	.club__games,
+	.club__wins,
+	.club__draws,
+	.club__loses,
+	.club__goals-for,
+	.club__goals-against,
+	.club__goals-difference,
+	.club__points,
+	.club__form,
+	.club__status {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.club__rank {
+		width: 5%;
+	}
+	.club__logo {
+		width: 5%;
+	}
+	.club__name {
+		width: 40%;
+		text-align: left;
+	}
+	.club__games {
+		width: 5%;
+	}
+	.club__wins {
+		width: 5%;
+	}
+	.club__draws {
+		width: 5%;
+	}
+	.club__loses {
+		width: 5%;
+	}
+	.club__goals-for {
+		width: 5%;
+	}
+	.club__goals-against {
+		width: 5%;
+	}
+	.club__goals-difference {
+		width: 5%;
+	}
+	.club__points {
+		width: 5%;
+	}
+	.club__form {
+		width: 10%;
+	}
+	// .club__status {
+	// 	width: 5%;
+	// }
+
+	.ucl-zone {
+		border-bottom: 2px solid royalblue;
+	}
+
+	.relegation-zone {
+		border-bottom: 2px solid tomato;
+	}
+}

@@ -1,5 +1,11 @@
 @import '../../settings/scss/base';
 
+.last-fixtures {
+	@include mobile {
+		order: 1;
+	}
+}
+
 .last-fixtures__title {
 	width: 100%;
 	text-align: center;
@@ -19,9 +25,9 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-    @include mobile {
-        flex-wrap: wrap;
-    }
+	@include mobile {
+		flex-wrap: wrap;
+	}
 }
 
 .last-fixtures__info {
@@ -45,9 +51,9 @@
 	.last-fixtures__status {
 		font-size: 9px;
 	}
-    .fa-circle {
-        color: #b9b9b9;
-    }
+	.fa-circle {
+		color: #b9b9b9;
+	}
 	.win {
 		color: #6beb7e;
 	}

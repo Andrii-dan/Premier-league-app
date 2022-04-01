@@ -39,13 +39,11 @@ const LastFixtures = ({ clubId }) => {
 			});
 	}, [clubId]);
 
-	let winnerStatus;
-
 	if (!lastFixtures) {
 		return <h2>loading...</h2>;
 	} else {
 		return (
-			<div className='col-12'>
+			<div className='col-12 last-fixtures'>
 				<div>
 					<h2 className='last-fixtures__title'>Last Fixtures</h2>
 				</div>
@@ -60,12 +58,12 @@ const LastFixtures = ({ clubId }) => {
 								<img
 									className='last-fixtures__logo'
 									src={
-										el.teams.home.id == clubId
+										el.teams.home.id === clubId
 											? el.teams.away.logo
 											: el.teams.home.logo
 									}
 									alt={`${
-										el.teams.home.id == clubId
+										el.teams.home.id === clubId
 											? el.teams.away.name
 											: el.teams.home.name
 									} logo`}
@@ -78,9 +76,9 @@ const LastFixtures = ({ clubId }) => {
 								<span className='last-fixtures__status'>
 									<i
 										class={`fas fa-circle ${
-											el.teams.home.id == clubId && el.teams.home.winner
+											el.teams.home.id === clubId && el.teams.home.winner
 												? 'win'
-												: el.teams.away.id == clubId && el.teams.away.winner
+												: el.teams.away.id === clubId && el.teams.away.winner
 												? 'win'
 												: el.goals.home === el.goals.away
 												? ''

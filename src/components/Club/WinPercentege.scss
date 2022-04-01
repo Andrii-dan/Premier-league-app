@@ -1,5 +1,10 @@
 @import '../../settings/scss/base';
 
+.win-percentage{
+@include mobile {
+	order: 2;
+}
+}
 .win-percentage__title {
 	width: 100%;
 	text-align: center;

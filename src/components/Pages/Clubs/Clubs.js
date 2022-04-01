@@ -7,7 +7,7 @@ const Clubs = () => {
 
 	return (
 		<>
-			<Club clubId={clubId} />
+			<Club clubId={parseInt(clubId)} />
 		</>
 	);
 };

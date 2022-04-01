@@ -1,5 +1,11 @@
 @import '../../../settings/scss/base';
 
+.club-stat {
+	@include mobile {
+		order: 3;
+	}
+}
+
 .stat__title {
 	width: 100%;
 	text-align: center;
@@ -11,5 +17,3 @@
 	border-top-right-radius: $border-radius;
 	border-bottom: 1px solid #b9b9b9;
 }
-
-

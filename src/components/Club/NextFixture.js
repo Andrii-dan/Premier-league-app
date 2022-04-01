@@ -53,12 +53,12 @@ const NextFixture = ({ clubId }) => {
 		return <h2>loading...</h2>;
 	} else {
 		return (
-			<ul className='col-12'>
+			<ul className='col-12 next-fixture'>
 				<li>
-					<h2 className='next-fixtures__title'>Next Fixture</h2>
+					<h2 className='next-fixture__title'>Next Fixture</h2>
 				</li>
-				<li className='col-12 next-fixtures__date'>
-					<h3 className='next-fixtures__date-info'>
+				<li className='col-12 next-fixture__date'>
+					<h3 className='next-fixture__date-info'>
 						{days[new Date(fixture.fixture.date).getDay()]}{' '}
 						{new Date(fixture.fixture.date).getDate()}{' '}
 						{months[new Date(fixture.fixture.date).getMonth()]}

@@ -1,0 +1,86 @@
+@import '../../settings/scss/base';
+
+.scorer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #b9b9b9;
+	border-top: none;
+	background: $table-bg-color;
+	cursor: pointer;
+	&:hover {
+		box-shadow: $base-box-shadow;
+		background: linear-gradient(
+			190deg,
+			rgba(151, 60, 255, 1) 40%,
+			rgba(255, 48, 250, 1)
+		);
+		color: #fff;
+	}
+	&__photo {
+		img {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+		}
+	}
+	&:last-child {
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+	}
+}
+
+.all-scorers {
+	margin-top: 8px;
+
+	&-title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 10px 0;
+		color: #fff;
+		background: $title-background-color;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		border-bottom: 1px solid #b9b9b9;
+	}
+	.scorer__rank,
+	.scorer__logo,
+	.scorer__name,
+	.scorer__appearences,
+	.scorer__minutes,
+	.scorer__penalty,
+	.scorer__scored {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.scorer__rank {
+		width: 3%;
+	}
+	.scorer__logo {
+		width: 7%;
+	}
+	.scorer__name {
+		h3 {
+			font-weight: bold;
+		}
+		width: 45%;
+		text-align: left;
+		padding-left: 15px;
+		line-height: 25px;
+	}
+	.scorer__appearences {
+		width: 15%;
+	}
+	.scorer__minutes {
+		width: 10%;
+	}
+	.scorer__penalty {
+		width: 10%;
+	}
+	.scorer__scored {
+		width: 10%;
+	}
+}

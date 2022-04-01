@@ -28,7 +28,7 @@ const WinPercentege = ({ clubMatches }) => {
 	}, [clubMatches]);
 
 	return (
-		<div className='col-12'>
+		<div className='col-12 win-percentage'>
 			<div>
 				<h2 className='win-percentage__title'>Win Percentage</h2>
 			</div>
