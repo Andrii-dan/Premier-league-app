@@ -2,6 +2,9 @@
 
 .full-standing {
 	margin-top: 8px;
+	@include mobile {
+		padding: 0 8px;
+	}
 	&-title {
 		width: 100%;
 		padding: 10px 0;
@@ -53,16 +56,28 @@
 
 	.club__rank {
 		width: 5%;
+		@include mobile {
+			width: 10%;
+		}
 	}
 	.club__logo {
 		width: 5%;
+		@include mobile {
+			width: 15%;
+		}
 	}
 	.club__name {
 		width: 40%;
 		text-align: left;
+		@include mobile {
+			width: 45%;
+		}
 	}
 	.club__games {
 		width: 5%;
+		@include mobile {
+			width: 10%;
+		}
 	}
 	.club__wins {
 		width: 5%;
@@ -81,9 +96,15 @@
 	}
 	.club__goals-difference {
 		width: 5%;
+		@include mobile {
+			width: 10%;
+		}
 	}
 	.club__points {
 		width: 5%;
+		@include mobile {
+			width: 10%;
+		}
 	}
 	.club__form {
 		width: 10%;
@@ -91,7 +112,16 @@
 	// .club__status {
 	// 	width: 5%;
 	// }
-
+	.club__wins,
+	.club__draws,
+	.club__loses,
+	.club__goals-for,
+	.club__goals-against,
+	.club__form {
+		@include mobile {
+			display: none;
+		}
+	}
 	.ucl-zone {
 		border-bottom: 2px solid royalblue;
 	}

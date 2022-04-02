@@ -6,7 +6,7 @@ const Header = () => {
 	const [hamMenuClass, setHamMenuClass] = useState('hide');
 	const [isToggleOn, setIsToggleOn] = useState(true);
 	let navigate = useNavigate();
-	
+
 	const handleClick = () => {
 		setIsToggleOn((prev) => {
 			return prev ? (prev = false) : (prev = true);
@@ -47,10 +47,13 @@ const Header = () => {
 						<a href='/'>Home</a>
 					</li>
 					<li>
-						<a href='/'>Fixtures</a>
+						<a href='/standing'>Standing</a>
 					</li>
 					<li>
-						<a href='/'>Table</a>
+						<a href='/topscorers'>Top Scorers</a>
+					</li>
+					<li>
+						<a href='/topassistants'>Top Assistants</a>
 					</li>
 				</ul>
 			</nav>

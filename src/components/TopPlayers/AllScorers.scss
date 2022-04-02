@@ -32,6 +32,9 @@
 
 .all-scorers {
 	margin-top: 8px;
+	@include mobile {
+		padding: 0 8px;
+	}
 
 	&-title {
 		display: flex;
@@ -58,9 +61,15 @@
 
 	.scorer__rank {
 		width: 3%;
+		@include mobile {
+			width: 10%;
+		}
 	}
 	.scorer__logo {
 		width: 7%;
+		@include mobile {
+			width: 10%;
+		}
 	}
 	.scorer__name {
 		h3 {
@@ -70,17 +79,32 @@
 		text-align: left;
 		padding-left: 15px;
 		line-height: 25px;
+		@include mobile {
+			width: 65%;
+		}
 	}
 	.scorer__appearences {
 		width: 15%;
+		@include mobile {
+			display: none;
+		}
 	}
 	.scorer__minutes {
 		width: 10%;
+		@include mobile {
+			display: none;
+		}
 	}
 	.scorer__penalty {
 		width: 10%;
+		@include mobile {
+			display: none;
+		}
 	}
 	.scorer__scored {
 		width: 10%;
+		@include mobile {
+			width: 15%;
+		}
 	}
 }
