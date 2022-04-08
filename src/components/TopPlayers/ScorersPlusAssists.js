@@ -5,14 +5,14 @@ const ScorersPlusAssists = () => {
 	const [scorers, setScorers] = useState(false);
 
 	useEffect(() => {
+		console.log(process.env.REACT_APP_API_FOOTBALL_KEY);
 		fetch(
 			'https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=39&season=2021',
 			{
 				method: 'GET',
 				headers: {
 					'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-					'X-RapidAPI-Key':
-						'38d50a19bfmsh71acbf14c0d41aep1f5e8ejsnf0f32a832cf7',
+					'X-RapidAPI-Key': process.env.REACT_APP_API_FOOTBALL_KEY,
 				},
 			}
 		)
@@ -20,7 +20,9 @@ const ScorersPlusAssists = () => {
 			.then((res) => {
 				setScorers(
 					res.response.sort((a, b) => {
-						return ((b.statistics[0].goals.total + b.statistics[0].goals.assists) -
+						return (
+							b.statistics[0].goals.total +
+							b.statistics[0].goals.assists -
 							(a.statistics[0].goals.total + a.statistics[0].goals.assists)
 						);
 					})

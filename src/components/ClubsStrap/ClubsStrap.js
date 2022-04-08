@@ -13,8 +13,7 @@ const ClubsStrap = () => {
 				method: 'GET',
 				headers: {
 					'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-					'x-rapidapi-key':
-						'38d50a19bfmsh71acbf14c0d41aep1f5e8ejsnf0f32a832cf7',
+					'x-rapidapi-key': process.env.REACT_APP_API_FOOTBALL_KEY,
 				},
 			}
 		)

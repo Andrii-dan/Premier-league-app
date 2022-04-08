@@ -14,8 +14,7 @@ const Standing = () => {
 				method: 'GET',
 				headers: {
 					'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-					'x-rapidapi-key':
-						'38d50a19bfmsh71acbf14c0d41aep1f5e8ejsnf0f32a832cf7',
+					'x-rapidapi-key': process.env.REACT_APP_API_FOOTBALL_KEY,
 				},
 			}
 		)
@@ -69,15 +68,8 @@ const Standing = () => {
 								</span>
 								<span className='club__name'>{el.team.name}</span>
 								<span className='club__games'>{el.all.played}</span>
-								{/* <span className='club__'>{el.all.win}</span> */}
-								{/* <span className='club__'>{el.all.draw}</span> */}
-								{/* <span className='club__'>{el.all.lose}</span> */}
-								{/* <span className='club__'>{el.all.goals.for}</span>
-								<span className='club__'>{el.all.goals.against}</span> */}
 								<span className='club__goals'>{el.goalsDiff}</span>
 								<span className='club__points'>{el.points}</span>
-								{/* <span className='club__'>{el.form}</span> */}
-								{/* <span className='club__'>{el.status}</span> */}
 							</li>
 						);
 					})}

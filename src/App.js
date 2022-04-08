@@ -24,7 +24,10 @@ function App() {
 						<Route path='/standing' element={<FullStandingPage />} />
 						<Route path='/topscorers' element={<TopScorersPage />} />
 						<Route path='/topassistants' element={<TopAssistantsPage />} />
-						<Route path='/scorersplusassistants' element={<ScorersPlusAssistantsPage />} />
+						<Route
+							path='/scorersplusassistants'
+							element={<ScorersPlusAssistantsPage />}
+						/>
 						<Route path='*' element={<NotFoundPage />} />
 					</Routes>
 				</Content>

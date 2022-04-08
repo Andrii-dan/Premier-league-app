@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AllScorers.scss';
-import Standing from '../Standing/Standing'
+import Standing from '../Standing/Standing';
 
 const AllScorers = () => {
 	const [scorers, setScorers] = useState(false);
@@ -12,8 +12,7 @@ const AllScorers = () => {
 				method: 'GET',
 				headers: {
 					'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-					'X-RapidAPI-Key':
-						'38d50a19bfmsh71acbf14c0d41aep1f5e8ejsnf0f32a832cf7',
+					'X-RapidAPI-Key': process.env.REACT_APP_API_FOOTBALL_KEY,
 				},
 			}
 		)
@@ -70,7 +69,7 @@ const AllScorers = () => {
 						})}
 					</ul>
 				</div>
-                <Standing/>
+				<Standing />
 			</>
 		);
 	}
