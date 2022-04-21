@@ -6,6 +6,7 @@ import LastFixtures from './LastFixtures';
 import NextFixture from './NextFixture';
 import ClubStanding from '../Standing/ClubStanding';
 import WinPercentege from './WinPercentege';
+import Loading from '../BaseComponents/Loading';
 
 const Club = ({ clubId }) => {
 	const todaysDate = new Date().toISOString().slice(0, 10);
@@ -32,7 +33,7 @@ const Club = ({ clubId }) => {
 	}, [clubId]);
 
 	if (!clubInfo) {
-		return <h2>loading...</h2>;
+		return <Loading />;
 	} else {
 		return (
 			<>

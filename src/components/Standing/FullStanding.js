@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../BaseComponents/Loading';
 import TopScorers from '../TopPlayers/TopScorers';
 import './FullStanding.scss';
 
@@ -26,7 +27,7 @@ const FullStanding = () => {
 	}, []);
 
 	if (!standing) {
-		return <h1>Loading...</h1>;
+		return <Loading />;
 	} else {
 		return (
 			<>

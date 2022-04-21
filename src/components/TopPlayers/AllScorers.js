@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AllScorers.scss';
 import Standing from '../Standing/Standing';
+import Loading from '../BaseComponents/Loading';
 
 const AllScorers = () => {
 	const [scorers, setScorers] = useState(false);
@@ -22,7 +23,7 @@ const AllScorers = () => {
 	}, []);
 
 	if (!scorers) {
-		return 'Loading...';
+		return <Loading />;
 	} else {
 		return (
 			<>

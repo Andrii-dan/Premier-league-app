@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../BaseComponents/Loading';
 import './LastFixtures.scss';
 
 const LastFixtures = ({ clubId }) => {
@@ -39,7 +40,7 @@ const LastFixtures = ({ clubId }) => {
 	}, [clubId]);
 
 	if (!lastFixtures) {
-		return <h2>loading...</h2>;
+		return <Loading />;
 	} else {
 		return (
 			<div className='col-12 last-fixtures'>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../BaseComponents/Loading';
 import './Standing.scss';
 
 const Standing = () => {
@@ -30,7 +31,7 @@ const Standing = () => {
 	};
 
 	if (!standing) {
-		return <h1>Loading...</h1>;
+		return <Loading />;
 	} else {
 		return (
 			<div className='col-3 standing__container'>

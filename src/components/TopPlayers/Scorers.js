@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from '../BaseComponents/Loading';
 import Player from './Player';
 
 const Scorers = () => {
@@ -21,7 +22,7 @@ const Scorers = () => {
 	}, []);
 
 	if (!scorers) {
-		return 'Loading...';
+		return <Loading />;
 	} else {
 		return scorers.slice(0, 3).map((el, index) => {
 			return (

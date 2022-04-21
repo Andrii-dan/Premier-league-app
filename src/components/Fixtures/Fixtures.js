@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Loading from '../BaseComponents/Loading';
 import './Fixtures.scss';
 import FixturesDate from './FixturesDate';
 
@@ -100,7 +101,7 @@ const Fixtures = () => {
 	};
 
 	if (!fixtures) {
-		return <h2>loading...</h2>;
+		return <Loading />;
 	} else if (!error) {
 		return (
 			<h1>

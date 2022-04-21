@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../BaseComponents/Loading';
 import SingleFixture from '../Fixtures/SingleFixture';
 import './NextFixture.scss';
 
@@ -49,7 +50,7 @@ const NextFixture = ({ clubId }) => {
 	}, [clubId]);
 
 	if (!fixture) {
-		return <h2>loading...</h2>;
+		return <Loading />;
 	} else {
 		return (
 			<ul className='col-12 next-fixture'>

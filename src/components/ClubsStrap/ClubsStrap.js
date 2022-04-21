@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../BaseComponents/Loading';
 import './ClubsStrap.scss';
 
 const ClubsStrap = () => {
@@ -31,7 +32,7 @@ const ClubsStrap = () => {
 	}, []);
 
 	if (!clubsList) {
-		return <h2>loading...</h2>;
+		return <Loading />;
 	} else {
 		return (
 			<div className='clubs__strap'>

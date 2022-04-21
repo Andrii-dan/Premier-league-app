@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ClubSquad.scss';
 import Player from '../TopPlayers/Player';
+import Loading from '../BaseComponents/Loading';
 
 const ClubSquad = ({ clubId }) => {
 	const [squad, setSquad] = useState(false);
@@ -26,7 +27,7 @@ const ClubSquad = ({ clubId }) => {
 	}, [clubId]);
 
 	if (!squad) {
-		return <h2>loading...</h2>;
+		return <Loading />;
 	} else {
 		return (
 			<div className='col-3 club-squad__container'>
