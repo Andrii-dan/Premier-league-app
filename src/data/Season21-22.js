@@ -532,6 +532,341 @@ const season2122 = {
 			logo: 'https://cdn-icons-png.flaticon.com/512/1202/1202926.png',
 		},
 	],
+
+	topScorers: [
+		{
+			rank: '1',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Mohamed Salah',
+			team: 'Liverpool',
+			appearences: '35',
+			minutes: '2,761',
+			goals: { scored: '23', penalty: '5' },
+		},
+		{
+			rank: '2',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Son Heung-min',
+			team: 'Tottenham',
+			appearences: '35',
+			minutes: '3,019',
+			goals: { scored: '23', penalty: '0' },
+		},
+		{
+			rank: '3',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Cristiano Ronaldo',
+			team: 'Man United',
+			appearences: '30',
+			minutes: '2,458',
+			goals: { scored: '18', penalty: '3' },
+		},
+		{
+			rank: '4',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Harry Kane',
+			team: 'Tottenham',
+			appearences: '37',
+			minutes: '3,232',
+			goals: { scored: '17', penalty: '4' },
+		},
+		{
+			rank: '5',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Sadio Mane',
+			team: 'Liverpool',
+			appearences: '34',
+			minutes: '2,824',
+			goals: { scored: '16', penalty: '0' },
+		},
+		{
+			rank: '6',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Kevin De Bruine',
+			team: 'Man City',
+			appearences: '30',
+			minutes: '2,205',
+			goals: { scored: '15', penalty: '0' },
+		},
+		{
+			rank: '7',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Diogo Jota',
+			team: 'Liverpool',
+			appearences: '35',
+			minutes: '2,372',
+			goals: { scored: '15', penalty: '0' },
+		},
+		{
+			rank: '8',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Jamie Vardy',
+			team: 'Leicester',
+			appearences: '25',
+			minutes: '1,805',
+			goals: { scored: '15', penalty: '0' },
+		},
+		{
+			rank: '9',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Wilfried Zaha',
+			team: 'Crystal Palace',
+			appearences: '33',
+			minutes: '2,761',
+			goals: { scored: '14', penalty: '5' },
+		},
+		{
+			rank: '10',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Raheem Sterling',
+			team: 'Man City',
+			appearences: '30',
+			minutes: '2,127',
+			goals: { scored: '13', penalty: '2' },
+		},
+	],
+
+	topAssists: [
+		{
+			rank: '1',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Mohamed Salah',
+			team: 'Liverpool',
+			appearences: '35',
+			minutes: '2,761',
+			assists: '13',
+			passes: '1,079',
+		},
+		{
+			rank: '2',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Alexander-Arnold',
+			team: 'Liverpool',
+			appearences: '32',
+			minutes: '2,854',
+			assists: '12',
+			passes: '2,155',
+		},
+		{
+			rank: '3',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Andrew Robertson',
+			team: 'Liverpool',
+			appearences: '29',
+			minutes: '2,540',
+			assists: '10',
+			passes: '1,928',
+		},
+		{
+			rank: '4',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Harvey Barnes',
+			team: 'Leicester',
+			appearences: '32',
+			minutes: '2,106',
+			assists: '10',
+			passes: '704',
+		},
+		{
+			rank: '5',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Mason Mount',
+			team: 'Chelsea',
+			appearences: '32',
+			minutes: '2,366',
+			assists: '10',
+			passes: '1,115',
+		},
+		{
+			rank: '6',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Jared Bowen',
+			team: 'West Ham',
+			appearences: '36',
+			minutes: '2,993',
+			assists: '10',
+			passes: '714',
+		},
+		{
+			rank: '7',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Paul Pogba',
+			team: 'Man United',
+			appearences: '20',
+			minutes: '1,351',
+			assists: '9',
+			passes: '877',
+		},
+		{
+			rank: '8',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Reece James',
+			team: 'Chelsea',
+			appearences: '26',
+			minutes: '1,866',
+			assists: '9',
+			passes: '1,379',
+		},
+		{
+			rank: '9',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Gabriel Jsus',
+			team: 'Man City',
+			appearences: '28',
+			minutes: '1,878',
+			assists: '9',
+			passes: '739',
+		},
+		{
+			rank: '10',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Harry Kane',
+			team: 'Tottenham',
+			appearences: '37',
+			minutes: '3,232',
+			assists: '9',
+			passes: '874',
+		},
+	],
+
+	goalsPlusAssists: [
+		{
+			rank: '1',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Mohamed Salah',
+			team: 'Liverpool',
+			appearences: '35',
+			minutes: '2,761',
+			goalsPlusAssists: '36',
+			rating: '7,74',
+		},
+		{
+			rank: '2',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Son Heung-min',
+			team: 'Tottenham',
+			appearences: '35',
+			minutes: '3,019',
+			goalsPlusAssists: '30',
+			rating: '7,81',
+		},
+		{
+			rank: '3',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Harry Kane',
+			team: 'Tottenham',
+			appearences: '37',
+			minutes: '3,232',
+			goalsPlusAssists: '26',
+			rating: '7,49',
+		},
+
+		{
+			rank: '4',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Kevin De Bruine',
+			team: 'Man City',
+			appearences: '30',
+			minutes: '2,205',
+			goalsPlusAssists: '23',
+			rating: '7,91',
+		},
+
+		{
+			rank: '5',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Jared Bowen',
+			team: 'West Ham',
+			appearences: '36',
+			minutes: '2,993',
+			goalsPlusAssists: '22',
+			rating: '7,31',
+		},
+
+		{
+			rank: '6',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Cristiano Ronaldo',
+			team: 'Man United',
+			appearences: '30',
+			minutes: '2,458',
+			goalsPlusAssists: '21',
+			rating: '7,37',
+		},
+
+		{
+			rank: '7',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Mason Mount',
+			team: 'Chelsea',
+			appearences: '32',
+			minutes: '2,366',
+			goalsPlusAssists: '21',
+			rating: '7,48',
+		},
+
+		{
+			rank: '8',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'James Maddison',
+			team: 'Leicester',
+			appearences: '28',
+			minutes: '2,460',
+			goalsPlusAssists: '20',
+			rating: '7,23',
+		},
+		{
+			rank: '9',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Diogo Jota',
+			team: 'Liverpool',
+			appearences: '35',
+			minutes: '2,372',
+			goalsPlusAssists: '19',
+			rating: '7,23',
+		},
+
+		{
+			rank: '10',
+			photo:
+				'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83',
+			name: 'Sadio Mane',
+			team: 'Liverpool',
+			appearences: '34',
+			minutes: '2,824',
+			goalsPlusAssists: '18',
+			rating: '7,47',
+		},
+	],
 };
 
 export default season2122;
