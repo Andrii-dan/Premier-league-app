@@ -1,98 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Loading from '../BaseComponents/Loading';
+import season2122 from '../../data/Season21-22';
+// import Loading from '../BaseComponents/Loading';
 import TopScorers from '../TopPlayers/TopScorers';
 import './FullStanding.scss';
 
 const FullStanding = () => {
-	const [standing, setStanding] = useState(false);
+	// const [standing, setStanding] = useState(false);
 	let navigate = useNavigate();
 
-	useEffect(() => {
-		fetch(
-			'https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=39',
-			{
-				method: 'GET',
-				headers: {
-					'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-					'x-rapidapi-key': process.env.REACT_APP_API_FOOTBALL_KEY,
-				},
-			}
-		)
-			.then((response) => response.json())
-			.then((res) => setStanding(res.response[0].league.standings[0]))
-			.catch((err) => {
-				console.error(err);
-			});
-	}, []);
-
-	if (!standing) {
-		return <Loading />;
-	} else {
-		return (
-			<>
-				<div className='col-9 full-standing__container'>
-					<ul className='full-standing'>
-						<li className='full-standing-title'>
-							<span className='club__rank'></span>
-							<span className='club__logo'></span>
-							<span className='club__name'></span>
-							<span className='club__games'>GP</span>
-							<span className='club__wins'>Win</span>
-							<span className='club__draws'>Draw</span>
-							<span className='club__loses'>Lose</span>
-							<span className='club__goals-for'>G</span>
-							<span className='club__goals-against'>GA</span>
-							<span className='club__goals-difference'>GD</span>
-							<span className='club__points'>Pts</span>
-							<span className='club__form'>Form</span>
-							{/* <span className='club__status'></span> */}
-						</li>
-						{standing.map((el, index) => {
-							return (
-								<li
-									key={index}
-									className={
-										el.rank === 4
-											? 'col-12 club ucl-zone'
-											: el.rank === 17
-											? 'col-12 club relegation-zone'
-											: 'col-12 club'
-									}
-									onClick={() => {
-										navigate(`/clubs/${el.team.id}`);
-									}}
-								>
-									<span className='club__rank'>{el.rank}</span>
-									<span className='club__logo'>
-										<img
-											style={{ width: '25px', height: '25px' }}
-											src={el.team.logo}
-											alt={`${el.team.name} logo`}
-										/>
-									</span>
-									<span className='club__name'>{el.team.name}</span>
-									<span className='club__games'>{el.all.played}</span>
-									<span className='club__wins'>{el.all.win}</span>
-									<span className='club__draws'>{el.all.draw}</span>
-									<span className='club__loses'>{el.all.lose}</span>
-									<span className='club__goals-for'>{el.all.goals.for}</span>
-									<span className='club__goals-against'>
-										{el.all.goals.against}
-									</span>
-									<span className='club__goals-difference'>{el.goalsDiff}</span>
-									<span className='club__points'>{el.points}</span>
-									<span className='club__form'>{el.form}</span>
-									{/* <span className='club__status'>{el.status}</span> */}
-								</li>
-							);
-						})}
-					</ul>
-				</div>
-				<TopScorers />
-			</>
-		);
-	}
+	// if (!standing) {
+	// 	return <Loading />;
+	// } else {
+	return (
+		<>
+			<div className='col-9 full-standing__container'>
+				<ul className='full-standing'>
+					<li className='full-standing-title'>
+						<span className='club__rank'></span>
+						<span className='club__logo'></span>
+						<span className='club__name'></span>
+						<span className='club__games'>GP</span>
+						<span className='club__wins'>Win</span>
+						<span className='club__draws'>Draw</span>
+						<span className='club__loses'>Lose</span>
+						<span className='club__goals-for'>G</span>
+						<span className='club__goals-against'>GA</span>
+						<span className='club__goals-difference'>GD</span>
+						<span className='club__points'>Pts</span>
+						<span className='club__form'>Form</span>
+						{/* <span className='club__status'></span> */}
+					</li>
+					{season2122.standing.map((el, index) => {
+						return (
+							<li
+								key={index}
+								className={
+									el.position === 4
+										? 'col-12 club ucl-zone'
+										: el.position === 17
+										? 'col-12 club relegation-zone'
+										: 'col-12 club'
+								}
+								onClick={() => {
+									navigate(`/clubs/${el.id}`);
+								}}
+							>
+								<span className='club__rank'>{el.position}</span>
+								<span className='club__logo'>
+									<img
+										style={{ width: '25px', height: '25px' }}
+										src={el.logo}
+										alt={`${el.name}'s logo`}
+									/>
+								</span>
+								<span className='club__name'>{el.name}</span>
+								<span className='club__games'>{el.matches.played}</span>
+								<span className='club__wins'>{el.matches.win}</span>
+								<span className='club__draws'>{el.matches.draw}</span>
+								<span className='club__loses'>{el.matches.lose}</span>
+								<span className='club__goals-for'>{el.goals.for}</span>
+								<span className='club__goals-against'>{el.goals.against}</span>
+								<span className='club__goals-difference'>
+									{parseInt(el.goals.for) - parseInt(el.goals.against)}
+								</span>
+								<span className='club__points'>{el.points}</span>
+								<span className='club__form'>{el.form}</span>
+								{/* <span className='club__status'>{el.status}</span> */}
+							</li>
+						);
+					})}
+				</ul>
+			</div>
+			<TopScorers />
+		</>
+	);
 };
+// };
 
 export default FullStanding;

@@ -1,9 +1,9 @@
 import React from 'react';
 import './SingleFixture.scss';
 
-const SingleFixture = ({ matchData, index, additionalClass }) => {
+const SingleFixture = ({ matchData }) => {
 	return (
-		<div key={index} className={`col-12 fixture ${additionalClass}`}>
+		<div className={'col-12 fixture'}>
 			<span className='team home'>{matchData.teams.home.name}</span>
 			<span className='club-logo'>
 				<img
