@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Loading from '../BaseComponents/Loading';
 import SingleFixture from '../Fixtures/SingleFixture';
 import './NextFixture.scss';
@@ -29,25 +29,25 @@ const NextFixture = ({ clubId }) => {
 		'December',
 	];
 
-	useEffect(() => {
-		fetch(
-			`https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2021&team=${clubId}&next=1`,
-			{
-				method: 'GET',
-				headers: {
-					'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-					'X-RapidAPI-Key': process.env.REACT_APP_API_FOOTBALL_KEY,
-				},
-			}
-		)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => setFixture(data.response[0]))
-			.catch((err) => {
-				console.error(err);
-			});
-	}, [clubId]);
+	// useEffect(() => {
+	// 	fetch(
+	// 		`https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2021&team=${clubId}&next=1`,
+	// 		{
+	// 			method: 'GET',
+	// 			headers: {
+	// 				'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
+	// 				'X-RapidAPI-Key': process.env.REACT_APP_API_FOOTBALL_KEY,
+	// 			},
+	// 		}
+	// 	)
+	// 		.then((res) => {
+	// 			return res.json();
+	// 		})
+	// 		.then((data) => setFixture(data.response[0]))
+	// 		.catch((err) => {
+	// 			console.error(err);
+	// 		});
+	// }, [clubId]);
 
 	if (!fixture) {
 		return <Loading />;

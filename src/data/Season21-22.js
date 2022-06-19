@@ -432,9 +432,9 @@ const season2122 = {
 	],
 	clubs: [
 		{
-			id: 1,
+			id: 'Tyo0e0YPtb',
 			name: 'Man City',
-			logo: 'https://cdn-icons-png.flaticon.com/512/1202/1202926.png',
+			logo: 'https://firebasestorage.googleapis.com/v0/b/premier-league-app-d1a5b.appspot.com/o/clubs%20logo%2Fbournemouth.png?alt=media&token=c4fb34dc-3f6f-4970-a2be-f176fb99a05b',
 		},
 		{
 			id: 2,

@@ -1,36 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import './Club.scss';
 import ClubSquad from './ClubSquad';
-import ClubStat from './ClubStat/ClubStat';
+// import ClubStat from './ClubStat/ClubStat';
 import LastFixtures from './LastFixtures';
 import NextFixture from './NextFixture';
-import ClubStanding from '../Standing/ClubStanding';
-import WinPercentege from './WinPercentege';
+// import ClubStanding from '../Standing/ClubStanding';
+// import WinPercentege from './WinPercentege';
 import Loading from '../BaseComponents/Loading';
+import db from '../../firebase';
+import { doc, onSnapshot } from 'firebase/firestore';
 
 const Club = ({ clubId }) => {
-	const todaysDate = new Date().toISOString().slice(0, 10);
+	// const todaysDate = new Date().toISOString().slice(0, 10);
 	const [clubInfo, setClubInfo] = useState(false);
 
 	useEffect(() => {
-		fetch(
-			`https://api-football-v1.p.rapidapi.com/v3/teams/statistics?league=39&season=2021&team=${clubId}&date=${todaysDate}`,
-			{
-				method: 'GET',
-				headers: {
-					'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-					'X-RapidAPI-Key': process.env.REACT_APP_API_FOOTBALL_KEY,
-				},
-			}
-		)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => setClubInfo(data.response))
-			.catch((err) => {
-				console.error(err);
-			});
+		onSnapshot(doc(db, 'season_22_23', 'K8H74IHjWeLk9lObxABX'), (doc) => {
+			setClubInfo(
+				doc.data().clubs.find((el) => {
+					return el.id === clubId;
+				})
+			);
+		});
 	}, [clubId]);
+
+	console.log(clubInfo);
 
 	if (!clubInfo) {
 		return <Loading />;
@@ -40,20 +34,20 @@ const Club = ({ clubId }) => {
 				<div className='col-12 club__page'>
 					<img
 						className='club__page-logo'
-						src={clubInfo.team.logo}
-						alt={`${clubInfo.team.name} logo`}
+						src={clubInfo.logo}
+						alt={`${clubInfo.name} logo`}
 					/>{' '}
-					<h1 className='club__page-title'>{clubInfo.team.name}</h1>
+					<h1 className='club__page-title'>{clubInfo.name}</h1>
 				</div>
-				<ClubSquad clubId={clubId} />
+				<ClubSquad clubInfo={clubInfo.players} />
 				<div className='col-6'>
 					<NextFixture clubId={clubId} />
 					<LastFixtures clubId={clubId} />
-					<ClubStat clubInfo={clubInfo} />
+					{/* <ClubStat clubInfo={clubInfo} /> */}
 				</div>
 				<div className='col-3'>
-					<WinPercentege clubMatches={clubInfo.fixtures} />
-					<ClubStanding clubId={clubId} />
+					{/* <WinPercentege clubMatches={clubInfo.fixtures} /> */}
+					{/* <ClubStanding clubId={clubId} /> */}
 				</div>
 			</>
 		);

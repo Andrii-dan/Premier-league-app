@@ -1,13 +1,14 @@
-import { useState } from 'react';
-// import Loading from '../BaseComponents/Loading';
+import { useState, useEffect } from 'react';
+import db from '../../firebase';
+import { doc, onSnapshot } from 'firebase/firestore';
+import Loading from '../BaseComponents/Loading';
 // import FixturesDate from './FixturesDate';
-import './Fixtures.scss';
-import season2122 from '../../data/Season21-22';
 import SingleFixture from './SingleFixture';
+import './Fixtures.scss';
 
 const Fixtures = () => {
 	const [matchDay, setMatchDay] = useState(1);
-	// const [fixtures, setFixtures] = useState(false);
+	const [fixtures, setFixtures] = useState(false);
 	// const [error, setError] = useState(true);
 	// const [fixtureDate, setFixtureDate] = useState([]);
 	// const [fixturesByDate, setFixturesByDate] = useState();
@@ -87,6 +88,12 @@ const Fixtures = () => {
 	// 	setFixturesByDate(result);
 	// }, [fixtureDate, fixtures]);
 
+	useEffect(() => {
+		onSnapshot(doc(db, 'season_21_22', 'TYgYnoT3cAJnmezOJNpw'), (doc) => {
+			setFixtures(doc.data().fixtures[0].matchDay1);
+		});
+	}, []);
+
 	const handleChangeRound = (e) => {
 		if (matchDay === 38 && e) {
 			return;
@@ -101,51 +108,51 @@ const Fixtures = () => {
 		setMatchDay(parseInt(e.target.value));
 	};
 
-	console.log(season2122);
-
-	// if (!fixtures) {
-	// 	return <Loading />;
-	// } else if (!error) {
+	if (!fixtures) {
+		return  <Loading />;
+	}
+	// else if (!error) {
 	// 	return (
 	// 		<h1>
 	// 			<i className='fas fa-exclamation-triangle'></i>
 	// 		</h1>
 	// 	);
-	// } else {
-	return (
-		<div className='col-6 fixtures'>
-			<div className='col-12'>
-				<form>
-					<h2 className='fixtures__title'>
-						<select value={`Matchday ${matchDay}`} onChange={onSelectChange}>
-							<option value={`Matchday ${matchDay}`}>
-								{`Matchday ${matchDay}`}
-							</option>
-							{selectOption.map((el, index) => {
-								return (
-									<option key={index} value={el}>
-										Matchday {el}
-									</option>
-								);
-							})}
-						</select>
-					</h2>
-				</form>
-				{season2122.fixtures[parseInt(matchDay) - 1].map((el) => {
-					console.log(el);
-					return <SingleFixture matchData={el} />;
-				})}
-				<div className='fixtures__buttons col-12'>
-					<button onClick={() => handleChangeRound(false)}>
-						<i class='fas fa-arrow-left'></i> Previous round
-					</button>
-					<button onClick={() => handleChangeRound(true)}>
-						Next round <i className='fas fa-arrow-right'></i>
-					</button>
+	// }
+	else {
+		return (
+			<div className='col-6 fixtures'>
+				<div className='col-12'>
+					<form>
+						<h2 className='fixtures__title'>
+							<select value={`Matchday ${matchDay}`} onChange={onSelectChange}>
+								<option value={`Matchday ${matchDay}`}>
+									{`Matchday ${matchDay}`}
+								</option>
+								{selectOption.map((el, index) => {
+									return (
+										<option key={index} value={el}>
+											Matchday {el}
+										</option>
+									);
+								})}
+							</select>
+						</h2>
+					</form>
+					{fixtures.map((el) => {
+						return <SingleFixture matchData={el} />;
+					})}
+					<div className='fixtures__buttons col-12'>
+						<button onClick={() => handleChangeRound(false)}>
+							<i class='fas fa-arrow-left'></i> Previous round
+						</button>
+						<button onClick={() => handleChangeRound(true)}>
+							Next round <i className='fas fa-arrow-right'></i>
+						</button>
+					</div>
 				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 };
 
 export default Fixtures;

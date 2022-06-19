@@ -5,7 +5,14 @@ const Player = ({ playerPhoto, playerName, club, goals, additionalClass }) => {
 	return (
 		<li className={`col-12 player  ${additionalClass}`}>
 			<div className='player__photo'>
-				<img src={playerPhoto} alt={`${playerName}'s`} />
+				<img
+					src={
+						playerPhoto === 'null'
+							? 'https://cdn-icons.flaticon.com/png/512/3024/premium/3024605.png?token=exp=1655577739~hmac=9694fd685b0240f81db92f9ec4b08a83'
+							: playerPhoto
+					}
+					alt={`${playerName}'s`}
+				/>
 			</div>
 			<div className='player__info'>
 				<h3>{playerName}</h3>

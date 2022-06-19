@@ -13,7 +13,6 @@ const ClubsStrap = () => {
 	return (
 		<div className='clubs__strap'>
 			{season2122.clubs.map((el, index) => {
-				console.log(el);
 				return (
 					<span
 						key={index}

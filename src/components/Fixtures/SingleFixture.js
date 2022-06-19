@@ -4,12 +4,12 @@ import './SingleFixture.scss';
 const SingleFixture = ({ matchData }) => {
 	return (
 		<div className={'col-12 fixture'}>
-			<span className='team home'>{matchData.teams.home.name}</span>
+			<span className='team home'>{matchData.home.name}</span>
 			<span className='club-logo'>
 				<img
 					style={{ width: '25px', height: '25px' }}
-					src={matchData.teams.home.logo}
-					alt={`${matchData.teams.home.name} logo`}
+					src={matchData.home.logo}
+					alt={`${matchData.home.name} logo`}
 				/>
 			</span>
 			<span className='score'>
@@ -20,11 +20,11 @@ const SingleFixture = ({ matchData }) => {
 			<span className='club-logo'>
 				<img
 					style={{ width: '25px', height: '25px' }}
-					src={matchData.teams.away.logo}
-					alt={`${matchData.teams.away.name} logo`}
+					src={matchData.away.logo}
+					alt={`${matchData.away.name} logo`}
 				/>
 			</span>
-			<span className='team away'>{matchData.teams.away.name}</span>
+			<span className='team away'>{matchData.away.name}</span>
 		</div>
 	);
 };
