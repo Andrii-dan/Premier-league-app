@@ -1,31 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import './WinPercentege.scss';
 
-const WinPercentege = ({ clubMatches }) => {
+const WinPercentege = ({ clubGames }) => {
 	const [percentage, setPercentage] = useState(0);
 	const [homePercentage, setHomePercentage] = useState(0);
 	const [awayPercentage, setAwayPercentage] = useState(0);
 
 	useEffect(() => {
 		setPercentage(() => {
-			return (
-				(100 / clubMatches.played.total) *
-				clubMatches.wins.total
-			).toFixed();
+			return ((100 / clubGames.played.total) * clubGames.win.total).toFixed();
 		});
 		setHomePercentage(() => {
-			return (
-				(100 / clubMatches.played.home) *
-				clubMatches.wins.home
-			).toFixed();
+			return ((100 / clubGames.played.home) * clubGames.win.home).toFixed();
 		});
 		setAwayPercentage(() => {
-			return (
-				(100 / clubMatches.played.away) *
-				clubMatches.wins.away
-			).toFixed();
+			return ((100 / clubGames.played.away) * clubGames.win.away).toFixed();
 		});
-	}, [clubMatches]);
+	}, [clubGames]);
 
 	return (
 		<div className='col-12 win-percentage'>

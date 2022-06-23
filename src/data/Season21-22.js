@@ -311,7 +311,7 @@ const season2122 = {
 
 		{
 			position: 10,
-			id: 10,
+			id: 'Tyo0e0YPtb',
 			name: 'Wolves',
 			logo: 'https://cdn-icons-png.flaticon.com/512/1202/1202926.png',
 			matches: { played: '38', win: '15', draw: '6', lose: '17' },

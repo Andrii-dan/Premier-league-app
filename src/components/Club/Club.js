@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Club.scss';
 import ClubSquad from './ClubSquad';
-// import ClubStat from './ClubStat/ClubStat';
-import LastFixtures from './LastFixtures';
-import NextFixture from './NextFixture';
-// import ClubStanding from '../Standing/ClubStanding';
-// import WinPercentege from './WinPercentege';
+import ClubStat from './ClubStat/ClubStat';
+// import LastFixtures from './LastFixtures';
+// import NextFixture from './NextFixture';
+import ClubStanding from '../Standing/ClubStanding';
+import WinPercentege from './WinPercentege';
 import Loading from '../BaseComponents/Loading';
 import db from '../../firebase';
 import { doc, onSnapshot } from 'firebase/firestore';
@@ -41,13 +41,13 @@ const Club = ({ clubId }) => {
 				</div>
 				<ClubSquad clubInfo={clubInfo.players} />
 				<div className='col-6'>
-					<NextFixture clubId={clubId} />
-					<LastFixtures clubId={clubId} />
-					{/* <ClubStat clubInfo={clubInfo} /> */}
+					{/* <NextFixture clubId={clubId} /> */}
+					{/* <LastFixtures clubId={clubId} /> */}
+					<ClubStat clubInfo={clubInfo} />
 				</div>
 				<div className='col-3'>
-					{/* <WinPercentege clubMatches={clubInfo.fixtures} /> */}
-					{/* <ClubStanding clubId={clubId} /> */}
+					<WinPercentege clubGames={clubInfo.games} />
+					<ClubStanding clubId={clubId} />
 				</div>
 			</>
 		);

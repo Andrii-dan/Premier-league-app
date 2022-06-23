@@ -64,7 +64,7 @@ const Standing = () => {
 
 				<li className='col-12 standing__buttons'>
 					<button onClick={() => handleClick(0, 10)}>
-						<i class='fas fa-arrow-left'></i> Top{' '}
+						<i className='fas fa-arrow-left'></i> Top{' '}
 					</button>
 					<button
 						onClick={() => {
@@ -74,7 +74,7 @@ const Standing = () => {
 						See Full
 					</button>
 					<button onClick={() => handleClick(10, 20)}>
-						Bottom <i class='fas fa-arrow-right'></i>
+						Bottom <i className='fas fa-arrow-right'></i>
 					</button>
 				</li>
 			</ul>

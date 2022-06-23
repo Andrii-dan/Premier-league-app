@@ -15,9 +15,9 @@ const ClubStat = ({ clubInfo }) => {
 					firstTitle={'Total'}
 					secondTitle={'Home'}
 					thirdTitle={'Away'}
-					firstStat={clubInfo.fixtures.played.total}
-					secondStat={clubInfo.fixtures.played.home}
-					thirdStat={clubInfo.fixtures.played.away}
+					firstStat={clubInfo.games.played.total}
+					secondStat={clubInfo.games.played.home}
+					thirdStat={clubInfo.games.played.away}
 				/>
 
 				<SingleStatContainer
@@ -25,9 +25,9 @@ const ClubStat = ({ clubInfo }) => {
 					firstTitle={'Wins'}
 					secondTitle={'Draws'}
 					thirdTitle={'Loses'}
-					firstStat={clubInfo.fixtures.wins.total}
-					secondStat={clubInfo.fixtures.draws.total}
-					thirdStat={clubInfo.fixtures.loses.total}
+					firstStat={clubInfo.games.win.total}
+					secondStat={clubInfo.games.draw.total}
+					thirdStat={clubInfo.games.lose.total}
 				/>
 			</div>
 			<div className='col-12 club-stat'>
@@ -39,11 +39,9 @@ const ClubStat = ({ clubInfo }) => {
 					firstTitle={'Scored'}
 					secondTitle={'Conceded'}
 					thirdTitle={'Difference'}
-					firstStat={clubInfo.goals.for.total.total}
-					secondStat={clubInfo.goals.against.total.total}
-					thirdStat={
-						clubInfo.goals.for.total.total - clubInfo.goals.against.total.total
-					}
+					firstStat={clubInfo.goals.for.total}
+					secondStat={clubInfo.goals.against.total}
+					thirdStat={clubInfo.goals.for.total - clubInfo.goals.against.total}
 				/>
 
 				<SingleStatContainer
@@ -71,9 +69,9 @@ const ClubStat = ({ clubInfo }) => {
 					firstTitle={'Total'}
 					secondTitle={'Home'}
 					thirdTitle={'Away'}
-					firstStat={clubInfo.clean_sheet.total}
-					secondStat={clubInfo.clean_sheet.home}
-					thirdStat={clubInfo.clean_sheet.away}
+					firstStat={clubInfo.cleanSheet.total}
+					secondStat={clubInfo.cleanSheet.home}
+					thirdStat={clubInfo.cleanSheet.away}
 				/>
 			</div>
 		</>
