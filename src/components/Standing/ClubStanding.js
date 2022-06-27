@@ -14,7 +14,6 @@ const ClubStanding = ({ clubId }) => {
 			return el.id === clubId;
 		});
 	};
-	console.log(findObject().position);
 	// useEffect(() => {
 	// 	fetch(
 	// 		'https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=39',
