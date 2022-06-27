@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import season2122 from '../../data/Season21-22';
-// import Loading from '../BaseComponents/Loading';
+import Loading from '../BaseComponents/Loading';
+import db from '../../firebase';
+import { doc, onSnapshot } from 'firebase/firestore';
 import './Standing.scss';
 
 const Standing = () => {
-	// const [standing, setStanding] = useState(false);
+	const [standing, setStanding] = useState(false);
 	const [standingTop, setStandingTop] = useState([0, 10]);
 	let navigate = useNavigate();
 
@@ -13,23 +14,27 @@ const Standing = () => {
 		setStandingTop([top, bottom]);
 	};
 
-	// if (!standing) {
-	// 	return <Loading />;
-	// } else {
-	return (
-		<div className='col-3 standing__container'>
-			<ul className='standing'>
-				<li className='standing-title'>
-					<span className='club__rank'></span>
-					<span className='club__logo'></span>
-					<span className='club__name'></span>
-					<span className='club__games'>GP</span>
-					<span className='club__goals'>GD</span>
-					<span className='club__points'>Pts</span>
-				</li>
-				{season2122.standing
-					.slice(standingTop[0], standingTop[1])
-					.map((el, index) => {
+	useEffect(() => {
+		onSnapshot(doc(db, 'season_22_23', 'K8H74IHjWeLk9lObxABX'), (doc) => {
+			setStanding(doc.data().standing);
+		});
+	}, []);
+
+	if (!standing) {
+		return <Loading />;
+	} else {
+		return (
+			<div className='col-3 standing__container'>
+				<ul className='standing'>
+					<li className='standing-title'>
+						<span className='club__rank'></span>
+						<span className='club__logo'></span>
+						<span className='club__name'></span>
+						<span className='club__games'>GP</span>
+						<span className='club__goals'>GD</span>
+						<span className='club__points'>Pts</span>
+					</li>
+					{standing.slice(standingTop[0], standingTop[1]).map((el, index) => {
 						return (
 							<li
 								key={index}
@@ -62,25 +67,25 @@ const Standing = () => {
 						);
 					})}
 
-				<li className='col-12 standing__buttons'>
-					<button onClick={() => handleClick(0, 10)}>
-						<i className='fas fa-arrow-left'></i> Top{' '}
-					</button>
-					<button
-						onClick={() => {
-							navigate('/standing');
-						}}
-					>
-						See Full
-					</button>
-					<button onClick={() => handleClick(10, 20)}>
-						Bottom <i className='fas fa-arrow-right'></i>
-					</button>
-				</li>
-			</ul>
-		</div>
-	);
+					<li className='col-12 standing__buttons'>
+						<button onClick={() => handleClick(0, 10)}>
+							<i className='fas fa-arrow-left'></i> Top{' '}
+						</button>
+						<button
+							onClick={() => {
+								navigate('/standing');
+							}}
+						>
+							See Full
+						</button>
+						<button onClick={() => handleClick(10, 20)}>
+							Bottom <i className='fas fa-arrow-right'></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+		);
+	}
 };
-// };
 
 export default Standing;
